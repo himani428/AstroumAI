@@ -1,0 +1,3789 @@
+{
+  "created_at": "2026-10-16T07:10:23.769Z",
+  "versions": {
+    "retrieval": "hybrid-bm25-ngram-1.0.0",
+    "answerer": "extractive-1.0.0",
+    "criteria": "eval-criteria-1.0.0",
+    "chunker": "chunker-1.0.0"
+  },
+  "totals": {
+    "total": 17,
+    "correct": 13,
+    "correctly_abstained": 4,
+    "wrong": 0
+  },
+  "core_totals": {
+    "total": 11,
+    "correct": 9,
+    "correctly_abstained": 2,
+    "wrong": 0
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "set": "core",
+      "question": "What is the first-line antibiotic, dose basis, and duration for acute otitis media in a child?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 7 checks passed: STW-PED-01 first-line management states amoxicillin 40 mg/kg/day in three divided doses for 5 days.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Amoxicillin 40 mg\\/kg\\/day/",
+          "pass": true
+        },
+        {
+          "name": "national includes /three divided doses/",
+          "pass": true
+        },
+        {
+          "name": "national includes /5 days/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-PED-01 v2024.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the first-line antibiotic, dose basis, and duration for acute otitis media in a child?",
+        "intent": [
+          "DOSE_TEXT_AS_WRITTEN",
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 65,
+                    "doc_code": "STW-PED-01",
+                    "title": "Acute Otitis Media — Child OPD",
+                    "version": "2024.1",
+                    "effective_date": "2024-05-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                    "excerpt": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [
+          "Dose statements are reproduced verbatim from the cited workflow. No per-patient amount is calculated."
+        ],
+        "guard": {
+          "numeric_tokens_checked": 2,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "acute",
+                "otitis",
+                "media"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 65,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 1,
+                  "semantic": 0.456,
+                  "score": 0.958
+                },
+                {
+                  "chunk_id": 67,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 1,
+                  "semantic": 0.222,
+                  "score": 0.909
+                },
+                {
+                  "chunk_id": 79,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.873,
+                  "semantic": 1,
+                  "score": 0.75
+                },
+                {
+                  "chunk_id": 78,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 0.943,
+                  "semantic": 0.368,
+                  "score": 0.717
+                },
+                {
+                  "chunk_id": 68,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / REFER / item 1",
+                  "lexical": 0.729,
+                  "semantic": 0.419,
+                  "score": 0.682
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 65,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.958
+        },
+        {
+          "chunk_id": 67,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 0.909
+        },
+        {
+          "chunk_id": 79,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.75
+        },
+        {
+          "chunk_id": 78,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 0.717
+        },
+        {
+          "chunk_id": 68,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / REFER / item 1",
+          "score": 0.682
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "set": "core",
+      "question": "A 6-year-old with non-severe community pneumonia: what is the amoxicillin dose exactly as the workflow states it? (Dose question — retrieve and cite the text as written; do not compute for any specific child.)",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 8 checks passed: Text as written only; no per-child amount may appear.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Amoxicillin 40 mg\\/kg\\/day in three divided doses for 5 days/",
+          "pass": true
+        },
+        {
+          "name": "national excludes /\\b240\\b/",
+          "pass": true
+        },
+        {
+          "name": "national excludes /\\b480\\b/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-PED-02 v2023.2",
+          "pass": true
+        },
+        {
+          "name": "notes include /verbatim|as written/i",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "A 6-year-old with non-severe community pneumonia: what is the amoxicillin dose exactly as the workflow states it? (Dose question — retrieve and cite the text as written; do not compute for any specific child.)",
+        "intent": [
+          "DOSE_TEXT_AS_WRITTEN",
+          "PATIENT_SPECIFIC_CALCULATION_REQUESTED",
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Fast breathing for age without danger signs = non-severe pneumonia",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 69,
+                    "doc_code": "STW-PED-02",
+                    "title": "Community Pneumonia — Child OPD (Non-severe)",
+                    "version": "2023.2",
+                    "effective_date": "2023-11-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "CLASSIFY",
+                    "anchor": "p1 / CLASSIFY / item 1",
+                    "excerpt": "Fast breathing for age without danger signs = non-severe pneumonia"
+                  }
+                ]
+              },
+              {
+                "id": "n2",
+                "text": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 71,
+                    "doc_code": "STW-PED-02",
+                    "title": "Community Pneumonia — Child OPD (Non-severe)",
+                    "version": "2023.2",
+                    "effective_date": "2023-11-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                    "excerpt": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [
+          "Patient-specific dose calculation is outside this system (law 12). Any dose below is the workflow text as written; no amount has been computed for an individual patient."
+        ],
+        "guard": {
+          "numeric_tokens_checked": 2,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "non",
+                "severe",
+                "community",
+                "pneumonia",
+                "amoxicillin"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 69,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / CLASSIFY / item 1",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 74,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.88,
+                  "semantic": 0.602,
+                  "score": 0.87
+                },
+                {
+                  "chunk_id": 71,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.476,
+                  "semantic": 0.583,
+                  "score": 0.708
+                },
+                {
+                  "chunk_id": 72,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.413,
+                  "semantic": 0.391,
+                  "score": 0.643
+                },
+                {
+                  "chunk_id": 66,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.764,
+                  "semantic": 0.898,
+                  "score": 0.487
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 69,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / CLASSIFY / item 1",
+          "score": 1
+        },
+        {
+          "chunk_id": 74,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.87
+        },
+        {
+          "chunk_id": 71,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.708
+        },
+        {
+          "chunk_id": 72,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.643
+        },
+        {
+          "chunk_id": 66,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.487
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "set": "core",
+      "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension? (Note: the pack may contain more than one edition of this workflow.)",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 12 checks passed: Both editions must be shown with dates; the primary block must not present the archived atenolol advice as current.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Amlodipine 5 mg/",
+          "pass": true
+        },
+        {
+          "name": "national includes /Telmisartan 40 mg/",
+          "pass": true
+        },
+        {
+          "name": "national excludes /Atenolol/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GP-02 v2025.2",
+          "pass": true
+        },
+        {
+          "name": "conflicting editions shown",
+          "pass": true
+        },
+        {
+          "name": "edition 2025.2 shown with date",
+          "pass": true
+        },
+        {
+          "name": "edition 2025.2 includes /Amlodipine 5 mg/",
+          "pass": true
+        },
+        {
+          "name": "edition 2021.1 shown with date",
+          "pass": true
+        },
+        {
+          "name": "edition 2021.1 includes /Atenolol 50 mg/",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension? (Note: the pack may contain more than one edition of this workflow.)",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW): current edition 2025.2",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "v2025.2-1",
+                "text": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 12,
+                    "doc_code": "STW-GP-02",
+                    "title": "Hypertension — Initial Management (Adult)",
+                    "version": "2025.2",
+                    "effective_date": "2025-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                    "excerpt": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily"
+                  }
+                ]
+              },
+              {
+                "id": "v2025.2-2",
+                "text": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 16,
+                    "doc_code": "STW-GP-02",
+                    "title": "Hypertension — Initial Management (Adult)",
+                    "version": "2025.2",
+                    "effective_date": "2025-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "REFER",
+                    "anchor": "p1 / REFER / item 1",
+                    "excerpt": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy"
+                  }
+                ]
+              },
+              {
+                "id": "v2025.2-3",
+                "text": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 13,
+                    "doc_code": "STW-GP-02",
+                    "title": "Hypertension — Initial Management (Adult)",
+                    "version": "2025.2",
+                    "effective_date": "2025-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 2",
+                    "excerpt": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "topic": "Hypertension",
+            "kind": "EDITION_DIFFERENCE",
+            "versions": [
+              {
+                "doc_code": "STW-GP-02",
+                "title": "Hypertension — Initial Management (Adult)",
+                "version": "2025.2",
+                "effective_date": "2025-06-01",
+                "doc_status": "CURRENT",
+                "claims": [
+                  {
+                    "id": "v2025.2-1",
+                    "text": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 12,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2025.2",
+                        "effective_date": "2025-06-01",
+                        "doc_status": "CURRENT",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                        "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                        "excerpt": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "v2025.2-2",
+                    "text": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 16,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2025.2",
+                        "effective_date": "2025-06-01",
+                        "doc_status": "CURRENT",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "REFER",
+                        "anchor": "p1 / REFER / item 1",
+                        "excerpt": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "v2025.2-3",
+                    "text": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 13,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2025.2",
+                        "effective_date": "2025-06-01",
+                        "doc_status": "CURRENT",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                        "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 2",
+                        "excerpt": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "doc_code": "STW-GP-02",
+                "title": "Hypertension — Initial Management (Adult)",
+                "version": "2021.1",
+                "effective_date": "2021-02-01",
+                "doc_status": "SUPERSEDED",
+                "claims": [
+                  {
+                    "id": "v2021.1-1",
+                    "text": "Start Atenolol 50 mg once daily as initial monotherapy",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 18,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2021.1",
+                        "effective_date": "2021-02-01",
+                        "doc_status": "SUPERSEDED",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "FIRST-LINE MANAGEMENT (THIS 2021 EDITION)",
+                        "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                        "excerpt": "Start Atenolol 50 mg once daily as initial monotherapy"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "v2021.1-2",
+                    "text": "Review at 6 weeks",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 20,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2021.1",
+                        "effective_date": "2021-02-01",
+                        "doc_status": "SUPERSEDED",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "FIRST-LINE MANAGEMENT (THIS 2021 EDITION)",
+                        "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+                        "excerpt": "Review at 6 weeks"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "v2021.1-3",
+                    "text": "Alternative: Hydrochlorothiazide 25 mg once daily",
+                    "citations": [
+                      {
+                        "kind": "CORPUS",
+                        "chunk_id": 19,
+                        "doc_code": "STW-GP-02",
+                        "title": "Hypertension — Initial Management (Adult)",
+                        "version": "2021.1",
+                        "effective_date": "2021-02-01",
+                        "doc_status": "SUPERSEDED",
+                        "source_type": "NATIONAL_STW",
+                        "source_label": "National workflow (STW one-pager pack)",
+                        "page": 1,
+                        "section": "FIRST-LINE MANAGEMENT (THIS 2021 EDITION)",
+                        "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 2",
+                        "excerpt": "Alternative: Hydrochlorothiazide 25 mg once daily"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "note": "The pack holds more than one edition of this workflow. Both are shown with their dates and are not merged. The newer page declares that it supersedes the older one and the older page carries an archive notice; that metadata is reported, not re-judged."
+          }
+        ],
+        "notes": [
+          "Several editions of this workflow exist; see the edition comparison below."
+        ],
+        "guard": {
+          "numeric_tokens_checked": 11,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "hypertension"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "lexical": 0.885,
+                  "semantic": 1,
+                  "score": 1.117
+                },
+                {
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / REFER / item 1",
+                  "lexical": 0.709,
+                  "semantic": 0.497,
+                  "score": 0.691
+                },
+                {
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "lexical": 0.246,
+                  "semantic": 0.133,
+                  "score": 0.686
+                },
+                {
+                  "chunk_id": 20,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+                  "lexical": 0.307,
+                  "semantic": 0.344,
+                  "score": 0.664
+                },
+                {
+                  "chunk_id": 21,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / TARGETS / item 1",
+                  "lexical": 0.648,
+                  "semantic": 0.473,
+                  "score": 0.662
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 18,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+          "score": 1.117
+        },
+        {
+          "chunk_id": 16,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / REFER / item 1",
+          "score": 0.691
+        },
+        {
+          "chunk_id": 12,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+          "score": 0.686
+        },
+        {
+          "chunk_id": 20,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+          "score": 0.664
+        },
+        {
+          "chunk_id": 21,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / TARGETS / item 1",
+          "score": 0.662
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "set": "core",
+      "question": "Which analgesic class must be avoided in suspected dengue, and why?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 6 checks passed: NSAIDs, because of bleeding risk (STW-GP-04).",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /AVOID Ibuprofen, Diclofenac, Aspirin and all NSAIDs/",
+          "pass": true
+        },
+        {
+          "name": "national includes /bleeding risk/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GP-04 v2024.2",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Which analgesic class must be avoided in suspected dengue, and why?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "AVOID Ibuprofen, Diclofenac, Aspirin and all NSAIDs — bleeding risk",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 33,
+                    "doc_code": "STW-GP-04",
+                    "title": "Dengue Fever — OPD Management",
+                    "version": "2024.2",
+                    "effective_date": "2024-07-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "OPD MANAGEMENT",
+                    "anchor": "p1 / OPD MANAGEMENT / item 2",
+                    "excerpt": "AVOID Ibuprofen, Diclofenac, Aspirin and all NSAIDs — bleeding risk"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 0,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "analgesic",
+                "suspected",
+                "dengue"
+              ],
+              "unmatched_terms": [
+                "suspected"
+              ],
+              "coverage": 0.67,
+              "top": [
+                {
+                  "chunk_id": 33,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / OPD MANAGEMENT / item 2",
+                  "lexical": 1,
+                  "semantic": 0.489,
+                  "score": 1.013
+                },
+                {
+                  "chunk_id": 29,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / SUSPECT / item 1",
+                  "lexical": 0,
+                  "semantic": 0.589,
+                  "score": 0.524
+                },
+                {
+                  "chunk_id": 32,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / OPD MANAGEMENT / item 1",
+                  "lexical": 0.294,
+                  "semantic": 0.012,
+                  "score": 0.517
+                },
+                {
+                  "chunk_id": 30,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / WARNING SIGNS — ADMIT / item 1",
+                  "lexical": 0,
+                  "semantic": 0.324,
+                  "score": 0.468
+                },
+                {
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / REFER / item 1",
+                  "lexical": 0.622,
+                  "semantic": 1,
+                  "score": 0.452
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 33,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / OPD MANAGEMENT / item 2",
+          "score": 1.013
+        },
+        {
+          "chunk_id": 29,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / SUSPECT / item 1",
+          "score": 0.524
+        },
+        {
+          "chunk_id": 32,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / OPD MANAGEMENT / item 1",
+          "score": 0.517
+        },
+        {
+          "chunk_id": 30,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / WARNING SIGNS — ADMIT / item 1",
+          "score": 0.468
+        },
+        {
+          "chunk_id": 16,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / REFER / item 1",
+          "score": 0.452
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "set": "core",
+      "question": "What are the ORS volumes after each loose stool for a child aged 2–10 years, and what zinc course accompanies it?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 6 checks passed: ORS 100–200 ml for 2–10 y; zinc 20 mg daily for 14 days.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /100–200 ml \\(2–10 y\\)/",
+          "pass": true
+        },
+        {
+          "name": "national includes /Zinc 20 mg once daily for 14 days/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-PED-03 v2024.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What are the ORS volumes after each loose stool for a child aged 2–10 years, and what zinc course accompanies it?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "ORS after every loose stool: 50–100 ml (<2 y), 100–200 ml (2–10 y)",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 76,
+                    "doc_code": "STW-PED-03",
+                    "title": "Acute Gastroenteritis — Child OPD",
+                    "version": "2024.1",
+                    "effective_date": "2024-03-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                    "excerpt": "ORS after every loose stool: 50–100 ml (<2 y), 100–200 ml (2–10 y)"
+                  }
+                ]
+              },
+              {
+                "id": "n2",
+                "text": "Zinc 20 mg once daily for 14 days (10 mg if <6 months)",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 77,
+                    "doc_code": "STW-PED-03",
+                    "title": "Acute Gastroenteritis — Child OPD",
+                    "version": "2024.1",
+                    "effective_date": "2024-03-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                    "excerpt": "Zinc 20 mg once daily for 14 days (10 mg if <6 months)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 11,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "ors",
+                "volume",
+                "each",
+                "loose",
+                "stool",
+                "zinc"
+              ],
+              "unmatched_terms": [
+                "volume",
+                "each"
+              ],
+              "coverage": 0.67,
+              "top": [
+                {
+                  "chunk_id": 76,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 77,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.425,
+                  "semantic": 0.6,
+                  "score": 0.692
+                },
+                {
+                  "chunk_id": 74,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.233,
+                  "semantic": 0.345,
+                  "score": 0.564
+                },
+                {
+                  "chunk_id": 79,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0,
+                  "semantic": 0.35,
+                  "score": 0.473
+                },
+                {
+                  "chunk_id": 64,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / ASSESS / item 1",
+                  "lexical": 0,
+                  "semantic": 0.294,
+                  "score": 0.462
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 76,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 1
+        },
+        {
+          "chunk_id": 77,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.692
+        },
+        {
+          "chunk_id": 74,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.564
+        },
+        {
+          "chunk_id": 79,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.473
+        },
+        {
+          "chunk_id": 64,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / ASSESS / item 1",
+          "score": 0.462
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "set": "core",
+      "question": "Which red flags in acute low back pain mandate imaging or referral?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 6 checks passed: Both red-flag bullets must be present (completeness).",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Saddle anaesthesia/",
+          "pass": true
+        },
+        {
+          "name": "national includes /Fever with spinal tenderness/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-ORT-01 v2023.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Which red flags in acute low back pain mandate imaging or referral?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Saddle anaesthesia, bladder/bowel involvement, progressive weakness",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 53,
+                    "doc_code": "STW-ORT-01",
+                    "title": "Acute Low Back Pain — Adult OPD",
+                    "version": "2023.1",
+                    "effective_date": "2023-09-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "RED FLAGS — IMAGE/REFER",
+                    "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 1",
+                    "excerpt": "Saddle anaesthesia, bladder/bowel involvement, progressive weakness"
+                  }
+                ]
+              },
+              {
+                "id": "n2",
+                "text": "Fever with spinal tenderness; significant trauma; age >65 with new pain + weight loss",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 54,
+                    "doc_code": "STW-ORT-01",
+                    "title": "Acute Low Back Pain — Adult OPD",
+                    "version": "2023.1",
+                    "effective_date": "2023-09-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "RED FLAGS — IMAGE/REFER",
+                    "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 2",
+                    "excerpt": "Fever with spinal tenderness; significant trauma; age >65 with new pain + weight loss"
+                  }
+                ]
+              },
+              {
+                "id": "n3",
+                "text": "Reassess at 2 weeks; persistent >6 weeks = imaging pathway",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 58,
+                    "doc_code": "STW-ORT-01",
+                    "title": "Acute Low Back Pain — Adult OPD",
+                    "version": "2023.1",
+                    "effective_date": "2023-09-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "REVIEW",
+                    "anchor": "p1 / REVIEW / item 1",
+                    "excerpt": "Reassess at 2 weeks; persistent >6 weeks = imaging pathway"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 3,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "red",
+                "flag",
+                "acute",
+                "low",
+                "back",
+                "pain",
+                "imaging",
+                "referral"
+              ],
+              "unmatched_terms": [
+                "flag"
+              ],
+              "coverage": 0.63,
+              "top": [
+                {
+                  "chunk_id": 54,
+                  "doc_code": "STW-ORT-01",
+                  "version": "2023.1",
+                  "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 2",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1.15
+                },
+                {
+                  "chunk_id": 53,
+                  "doc_code": "STW-ORT-01",
+                  "version": "2023.1",
+                  "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 1",
+                  "lexical": 0.787,
+                  "semantic": 0.829,
+                  "score": 1.031
+                },
+                {
+                  "chunk_id": 58,
+                  "doc_code": "STW-ORT-01",
+                  "version": "2023.1",
+                  "anchor": "p1 / REVIEW / item 1",
+                  "lexical": 0.639,
+                  "semantic": 0.963,
+                  "score": 0.851
+                },
+                {
+                  "chunk_id": 4,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / RED FLAGS — REFER / item 2",
+                  "lexical": 0.87,
+                  "semantic": 0.877,
+                  "score": 0.773
+                },
+                {
+                  "chunk_id": 3,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / RED FLAGS — REFER / item 1",
+                  "lexical": 0.87,
+                  "semantic": 0.728,
+                  "score": 0.742
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 54,
+          "doc_code": "STW-ORT-01",
+          "version": "2023.1",
+          "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 2",
+          "score": 1.15
+        },
+        {
+          "chunk_id": 53,
+          "doc_code": "STW-ORT-01",
+          "version": "2023.1",
+          "anchor": "p1 / RED FLAGS — IMAGE/REFER / item 1",
+          "score": 1.031
+        },
+        {
+          "chunk_id": 58,
+          "doc_code": "STW-ORT-01",
+          "version": "2023.1",
+          "anchor": "p1 / REVIEW / item 1",
+          "score": 0.851
+        },
+        {
+          "chunk_id": 4,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / RED FLAGS — REFER / item 2",
+          "score": 0.773
+        },
+        {
+          "chunk_id": 3,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / RED FLAGS — REFER / item 1",
+          "score": 0.742
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "set": "core",
+      "question": "Which urinary antibiotic is avoided at 36+ weeks of pregnancy, and what is the stated alternative?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 6 checks passed: Nitrofurantoin avoided; cefixime alternative.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Nitrofurantoin[^.]*avoid at 36\\+ weeks/",
+          "pass": true
+        },
+        {
+          "name": "national includes /Alternative: Cefixime 200 mg twice daily for 5 days/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GYN-02 v2023.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Which urinary antibiotic is avoided at 36+ weeks of pregnancy, and what is the stated alternative?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Nitrofurantoin 100 mg twice daily for 5 days (avoid at 36+ weeks)",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 42,
+                    "doc_code": "STW-GYN-02",
+                    "title": "Urinary Tract Infection in Pregnancy",
+                    "version": "2023.1",
+                    "effective_date": "2023-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                    "excerpt": "Nitrofurantoin 100 mg twice daily for 5 days (avoid at 36+ weeks)"
+                  }
+                ]
+              },
+              {
+                "id": "n2",
+                "text": "Alternative: Cefixime 200 mg twice daily for 5 days",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 43,
+                    "doc_code": "STW-GYN-02",
+                    "title": "Urinary Tract Infection in Pregnancy",
+                    "version": "2023.1",
+                    "effective_date": "2023-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                    "excerpt": "Alternative: Cefixime 200 mg twice daily for 5 days"
+                  }
+                ]
+              },
+              {
+                "id": "n3",
+                "text": "Ciprofloxacin and other fluoroquinolones throughout pregnancy",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 45,
+                    "doc_code": "STW-GYN-02",
+                    "title": "Urinary Tract Infection in Pregnancy",
+                    "version": "2023.1",
+                    "effective_date": "2023-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "AVOID",
+                    "anchor": "p1 / AVOID / item 1",
+                    "excerpt": "Ciprofloxacin and other fluoroquinolones throughout pregnancy"
+                  }
+                ]
+              },
+              {
+                "id": "n4",
+                "text": "Nitrofurantoin near term (36+ weeks)",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 46,
+                    "doc_code": "STW-GYN-02",
+                    "title": "Urinary Tract Infection in Pregnancy",
+                    "version": "2023.1",
+                    "effective_date": "2023-06-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "AVOID",
+                    "anchor": "p1 / AVOID / item 2",
+                    "excerpt": "Nitrofurantoin near term (36+ weeks)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 6,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "urinary",
+                "pregnancy",
+                "alternative"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 46,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / AVOID / item 2",
+                  "lexical": 1,
+                  "semantic": 0.697,
+                  "score": 1.056
+                },
+                {
+                  "chunk_id": 42,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.79,
+                  "semantic": 1,
+                  "score": 1.038
+                },
+                {
+                  "chunk_id": 45,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / AVOID / item 1",
+                  "lexical": 0.536,
+                  "semantic": 0.716,
+                  "score": 0.879
+                },
+                {
+                  "chunk_id": 43,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.498,
+                  "semantic": 0.668,
+                  "score": 0.825
+                },
+                {
+                  "chunk_id": 41,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / ASSESS / item 1",
+                  "lexical": 0.443,
+                  "semantic": 0.778,
+                  "score": 0.736
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 46,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / AVOID / item 2",
+          "score": 1.056
+        },
+        {
+          "chunk_id": 42,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 1.038
+        },
+        {
+          "chunk_id": 45,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / AVOID / item 1",
+          "score": 0.879
+        },
+        {
+          "chunk_id": 43,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.825
+        },
+        {
+          "chunk_id": 41,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / ASSESS / item 1",
+          "score": 0.736
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "set": "core",
+      "question": "At what HbA1c threshold at diagnosis does the workflow add a second agent to metformin, and which agent?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 5 checks passed: HbA1c >= 8.5%: add glimepiride 1 mg.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /HbA1c ≥ ?8\\.5% at diagnosis: add Glimepiride 1 mg/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GP-03 v2024.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "At what HbA1c threshold at diagnosis does the workflow add a second agent to metformin, and which agent?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "HbA1c ≥ 8.5% at diagnosis: add Glimepiride 1 mg before breakfast",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 25,
+                    "doc_code": "STW-GP-03",
+                    "title": "Type 2 Diabetes — Diagnosis & Initiation",
+                    "version": "2024.1",
+                    "effective_date": "2024-09-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                    "excerpt": "HbA1c ≥ 8.5% at diagnosis: add Glimepiride 1 mg before breakfast"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 3,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "hba1c",
+                "threshold",
+                "diagnosis",
+                "add",
+                "metformin"
+              ],
+              "unmatched_terms": [
+                "threshold"
+              ],
+              "coverage": 0.8,
+              "top": [
+                {
+                  "chunk_id": 25,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 24,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.284,
+                  "semantic": 0.529,
+                  "score": 0.622
+                },
+                {
+                  "chunk_id": 27,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / MONITOR / item 1",
+                  "lexical": 0.306,
+                  "semantic": 0.457,
+                  "score": 0.615
+                },
+                {
+                  "chunk_id": 23,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / DIAGNOSE / item 1",
+                  "lexical": 0.288,
+                  "semantic": 0.48,
+                  "score": 0.613
+                },
+                {
+                  "chunk_id": 26,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 0,
+                  "semantic": 0.181,
+                  "score": 0.438
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 25,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 1
+        },
+        {
+          "chunk_id": 24,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.622
+        },
+        {
+          "chunk_id": 27,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / MONITOR / item 1",
+          "score": 0.615
+        },
+        {
+          "chunk_id": 23,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / DIAGNOSE / item 1",
+          "score": 0.613
+        },
+        {
+          "chunk_id": 26,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 0.438
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "set": "core",
+      "question": "What is the first-line prophylactic drug for migraine in adults?",
+      "expected": "ABSTAIN",
+      "outcome": "CORRECTLY_ABSTAINED",
+      "explanation": "Abstained as expected: No migraine workflow exists in the supplied pack.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ABSTAINED",
+          "pass": true,
+          "detail": "actual ABSTAINED"
+        },
+        {
+          "name": "block national states what is missing",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the first-line prophylactic drug for migraine in adults?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ABSTAINED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ABSTAINED",
+            "claims": [],
+            "abstention": {
+              "reason_code": "TOPIC_NOT_IN_CORPUS",
+              "explanation": "The supplied corpus does not contain a workflow covering this topic. Cannot verify an answer from the supplied STW pack.",
+              "missing_evidence": [
+                "no occurrence of \"prophylactic\" in the national pack evidence",
+                "no occurrence of \"migraine\" in the national pack evidence"
+              ],
+              "nearest_sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "title": "Acute Pharyngitis — Adult OPD",
+                  "version": "2025.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2021.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                }
+              ]
+            }
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 0,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "prophylactic",
+                "migraine"
+              ],
+              "unmatched_terms": [
+                "prophylactic",
+                "migraine"
+              ],
+              "coverage": 0,
+              "top": [
+                {
+                  "chunk_id": 5,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.925,
+                  "semantic": 0.761,
+                  "score": 0.993
+                },
+                {
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / REFER / item 1",
+                  "lexical": 1,
+                  "semantic": 0.858,
+                  "score": 0.88
+                },
+                {
+                  "chunk_id": 21,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / TARGETS / item 1",
+                  "lexical": 0.915,
+                  "semantic": 1,
+                  "score": 0.877
+                },
+                {
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "lexical": 0.369,
+                  "semantic": 0.394,
+                  "score": 0.788
+                },
+                {
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "lexical": 0.348,
+                  "semantic": 0.215,
+                  "score": 0.743
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 5,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.993
+        },
+        {
+          "chunk_id": 16,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / REFER / item 1",
+          "score": 0.88
+        },
+        {
+          "chunk_id": 21,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / TARGETS / item 1",
+          "score": 0.877
+        },
+        {
+          "chunk_id": 18,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+          "score": 0.788
+        },
+        {
+          "chunk_id": 12,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+          "score": 0.743
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "set": "core",
+      "question": "What is the standard drug regimen for newly diagnosed pulmonary tuberculosis?",
+      "expected": "ABSTAIN",
+      "outcome": "CORRECTLY_ABSTAINED",
+      "explanation": "Abstained as expected: No tuberculosis workflow exists in the supplied pack.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ABSTAINED",
+          "pass": true,
+          "detail": "actual ABSTAINED"
+        },
+        {
+          "name": "block national states what is missing",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the standard drug regimen for newly diagnosed pulmonary tuberculosis?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ABSTAINED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ABSTAINED",
+            "claims": [],
+            "abstention": {
+              "reason_code": "TOPIC_NOT_IN_CORPUS",
+              "explanation": "The supplied corpus does not contain a workflow covering this topic. Cannot verify an answer from the supplied STW pack.",
+              "missing_evidence": [
+                "no occurrence of \"pulmonary\" in the national pack evidence",
+                "no occurrence of \"tuberculosis\" in the national pack evidence"
+              ],
+              "nearest_sources": [
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-PED-03",
+                  "title": "Acute Gastroenteritis — Child OPD",
+                  "version": "2024.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2021.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                }
+              ]
+            }
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 0,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "pulmonary",
+                "tuberculosis"
+              ],
+              "unmatched_terms": [
+                "pulmonary",
+                "tuberculosis"
+              ],
+              "coverage": 0,
+              "top": [
+                {
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / REFER / item 1",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 0.51
+                },
+                {
+                  "chunk_id": 75,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / ASSESS DEHYDRATION / item 1",
+                  "lexical": 0.845,
+                  "semantic": 0.493,
+                  "score": 0.343
+                },
+                {
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "lexical": 0,
+                  "semantic": 0.338,
+                  "score": 0.233
+                },
+                {
+                  "chunk_id": 25,
+                  "doc_code": "STW-GP-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0,
+                  "semantic": 0.741,
+                  "score": 0.228
+                },
+                {
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "lexical": 0,
+                  "semantic": 0.189,
+                  "score": 0.202
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 16,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / REFER / item 1",
+          "score": 0.51
+        },
+        {
+          "chunk_id": 75,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / ASSESS DEHYDRATION / item 1",
+          "score": 0.343
+        },
+        {
+          "chunk_id": 18,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+          "score": 0.233
+        },
+        {
+          "chunk_id": 25,
+          "doc_code": "STW-GP-03",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.228
+        },
+        {
+          "chunk_id": 12,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+          "score": 0.202
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "set": "core",
+      "question": "Per the clinic's own protocol, when are empirical antibiotics started in adult acute undifferentiated fever — and does the national workflow pack say the same? Label your sources.",
+      "expected": "PARTIAL",
+      "outcome": "CORRECT",
+      "explanation": "All 9 checks passed: Local protocol answered and labelled as the clinic's own; the pack has no adult undifferentiated-fever workflow so the national side must say it cannot confirm.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block local is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "local includes /Day 2: if fever persists beyond 48 hours/",
+          "pass": true
+        },
+        {
+          "name": "local includes /Azithromycin 500 mg/",
+          "pass": true
+        },
+        {
+          "name": "local cites SOP-CLIN-014 v2.1",
+          "pass": true
+        },
+        {
+          "name": "local answer labelled as clinic protocol",
+          "pass": true
+        },
+        {
+          "name": "block national is ABSTAINED",
+          "pass": true,
+          "detail": "actual ABSTAINED"
+        },
+        {
+          "name": "block national states what is missing",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Per the clinic's own protocol, when are empirical antibiotics started in adult acute undifferentiated fever — and does the national workflow pack say the same? Label your sources.",
+        "intent": [
+          "LOCAL_PROTOCOL",
+          "NATIONAL_COMPARISON"
+        ],
+        "outcome": "PARTIAL",
+        "blocks": [
+          {
+            "block_id": "local",
+            "label": "Clinic's own protocol",
+            "source_type": "LOCAL_PROTOCOL",
+            "source_label": "Clinic's own protocol (Sunrise Multi-speciality Clinic), NOT national guidance",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "l1",
+                "text": "Adults (≥18y) presenting to Sunrise OPD with acute fever < 7 days, no localizing red flags.",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 80,
+                    "doc_code": "SOP-CLIN-014",
+                    "title": "Sunrise Multi-speciality Clinic - Adult Acute Undifferentiated Fever: Local Treatment Protocol",
+                    "version": "2.1",
+                    "effective_date": "2026-03-10",
+                    "doc_status": "LOCAL_PROTOCOL",
+                    "source_type": "LOCAL_PROTOCOL",
+                    "source_label": "Clinic's own protocol (Sunrise Multi-speciality Clinic), NOT national guidance",
+                    "page": null,
+                    "section": "Scope",
+                    "anchor": "Scope",
+                    "excerpt": "Adults (≥18y) presenting to Sunrise OPD with acute fever < 7 days, no localizing red flags."
+                  }
+                ]
+              },
+              {
+                "id": "l2",
+                "text": "Day 2: if fever persists beyond 48 hours without a localizing source, start empirical Azithromycin 500 mg once daily for 3 days.",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 82,
+                    "doc_code": "SOP-CLIN-014",
+                    "title": "Sunrise Multi-speciality Clinic - Adult Acute Undifferentiated Fever: Local Treatment Protocol",
+                    "version": "2.1",
+                    "effective_date": "2026-03-10",
+                    "doc_status": "LOCAL_PROTOCOL",
+                    "source_type": "LOCAL_PROTOCOL",
+                    "source_label": "Clinic's own protocol (Sunrise Multi-speciality Clinic), NOT national guidance",
+                    "page": null,
+                    "section": "Step 2",
+                    "anchor": "Step 2",
+                    "excerpt": "Day 2: if fever persists beyond 48 hours without a localizing source, start empirical Azithromycin 500 mg once daily for 3 days."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ABSTAINED",
+            "claims": [],
+            "abstention": {
+              "reason_code": "TOPIC_NOT_IN_CORPUS",
+              "explanation": "The supplied corpus does not contain a workflow covering this topic. Cannot verify an answer from the supplied STW pack. Whether the national workflow agrees with the clinic protocol therefore cannot be confirmed; the divergence is unknown, not absent.",
+              "missing_evidence": [
+                "no occurrence of \"undifferentiated\" in the national pack evidence"
+              ],
+              "nearest_sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "title": "Acute Pharyngitis — Adult OPD",
+                  "version": "2025.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-PED-03",
+                  "title": "Acute Gastroenteritis — Child OPD",
+                  "version": "2024.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                }
+              ]
+            }
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 6,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "LOCAL_PROTOCOL",
+              "salient_terms": [
+                "empirical",
+                "acute",
+                "undifferentiated",
+                "fever"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 80,
+                  "doc_code": "SOP-CLIN-014",
+                  "version": "2.1",
+                  "anchor": "Scope",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 82,
+                  "doc_code": "SOP-CLIN-014",
+                  "version": "2.1",
+                  "anchor": "Step 2",
+                  "lexical": 0.541,
+                  "semantic": 0.991,
+                  "score": 0.819
+                },
+                {
+                  "chunk_id": 84,
+                  "doc_code": "SOP-CLIN-014",
+                  "version": "2.1",
+                  "anchor": "Step 4",
+                  "lexical": 0.238,
+                  "semantic": 0.659,
+                  "score": 0.631
+                },
+                {
+                  "chunk_id": 81,
+                  "doc_code": "SOP-CLIN-014",
+                  "version": "2.1",
+                  "anchor": "Step 1",
+                  "lexical": 0.184,
+                  "semantic": 0.638,
+                  "score": 0.606
+                },
+                {
+                  "chunk_id": 83,
+                  "doc_code": "SOP-CLIN-014",
+                  "version": "2.1",
+                  "anchor": "Step 3",
+                  "lexical": 0,
+                  "semantic": 0.301,
+                  "score": 0.463
+                }
+              ]
+            },
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "empirical",
+                "acute",
+                "undifferentiated",
+                "fever"
+              ],
+              "unmatched_terms": [
+                "undifferentiated"
+              ],
+              "coverage": 0.5,
+              "top": [
+                {
+                  "chunk_id": 8,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.886,
+                  "semantic": 0.923,
+                  "score": 0.94
+                },
+                {
+                  "chunk_id": 5,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.661,
+                  "semantic": 0.638,
+                  "score": 0.864
+                },
+                {
+                  "chunk_id": 79,
+                  "doc_code": "STW-PED-03",
+                  "version": "2024.1",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.921,
+                  "semantic": 1,
+                  "score": 0.769
+                },
+                {
+                  "chunk_id": 21,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / TARGETS / item 1",
+                  "lexical": 1,
+                  "semantic": 0.596,
+                  "score": 0.715
+                },
+                {
+                  "chunk_id": 1,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / ASSESS / item 1",
+                  "lexical": 0.561,
+                  "semantic": 0.454,
+                  "score": 0.714
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 80,
+          "doc_code": "SOP-CLIN-014",
+          "version": "2.1",
+          "anchor": "Scope",
+          "score": 1
+        },
+        {
+          "chunk_id": 82,
+          "doc_code": "SOP-CLIN-014",
+          "version": "2.1",
+          "anchor": "Step 2",
+          "score": 0.819
+        },
+        {
+          "chunk_id": 84,
+          "doc_code": "SOP-CLIN-014",
+          "version": "2.1",
+          "anchor": "Step 4",
+          "score": 0.631
+        },
+        {
+          "chunk_id": 81,
+          "doc_code": "SOP-CLIN-014",
+          "version": "2.1",
+          "anchor": "Step 1",
+          "score": 0.606
+        },
+        {
+          "chunk_id": 83,
+          "doc_code": "SOP-CLIN-014",
+          "version": "2.1",
+          "anchor": "Step 3",
+          "score": 0.463
+        },
+        {
+          "chunk_id": 8,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.94
+        },
+        {
+          "chunk_id": 5,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.864
+        },
+        {
+          "chunk_id": 79,
+          "doc_code": "STW-PED-03",
+          "version": "2024.1",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.769
+        }
+      ]
+    },
+    {
+      "id": "S01",
+      "set": "supplementary",
+      "question": "What is the first-line treatment for asthma in adults?",
+      "expected": "ABSTAIN",
+      "outcome": "CORRECTLY_ABSTAINED",
+      "explanation": "Abstained as expected: Topic absent from the pack.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ABSTAINED",
+          "pass": true,
+          "detail": "actual ABSTAINED"
+        },
+        {
+          "name": "block national states what is missing",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the first-line treatment for asthma in adults?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ABSTAINED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ABSTAINED",
+            "claims": [],
+            "abstention": {
+              "reason_code": "TOPIC_NOT_IN_CORPUS",
+              "explanation": "The supplied corpus does not contain a workflow covering this topic. Cannot verify an answer from the supplied STW pack.",
+              "missing_evidence": [
+                "no occurrence of \"asthma\" in the national pack evidence"
+              ],
+              "nearest_sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "title": "Acute Pharyngitis — Adult OPD",
+                  "version": "2025.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2021.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                }
+              ]
+            }
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 0,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "asthma"
+              ],
+              "unmatched_terms": [
+                "asthma"
+              ],
+              "coverage": 0,
+              "top": [
+                {
+                  "chunk_id": 5,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.63,
+                  "semantic": 0.501,
+                  "score": 0.823
+                },
+                {
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "lexical": 0.251,
+                  "semantic": 0.325,
+                  "score": 0.728
+                },
+                {
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "lexical": 0.237,
+                  "semantic": 0.164,
+                  "score": 0.689
+                },
+                {
+                  "chunk_id": 21,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / TARGETS / item 1",
+                  "lexical": 0.623,
+                  "semantic": 0.608,
+                  "score": 0.681
+                },
+                {
+                  "chunk_id": 44,
+                  "doc_code": "STW-GYN-02",
+                  "version": "2023.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 0.672
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 5,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.823
+        },
+        {
+          "chunk_id": 18,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+          "score": 0.728
+        },
+        {
+          "chunk_id": 12,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+          "score": 0.689
+        },
+        {
+          "chunk_id": 21,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / TARGETS / item 1",
+          "score": 0.681
+        },
+        {
+          "chunk_id": 44,
+          "doc_code": "STW-GYN-02",
+          "version": "2023.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 0.672
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "set": "supplementary",
+      "question": "What antibiotic does the pharyngitis workflow give when there is a penicillin allergy?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 5 checks passed: Straight lookup.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Azithromycin 500 mg once daily for 3 days/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GP-01 v2025.1",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What antibiotic does the pharyngitis workflow give when there is a penicillin allergy?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Penicillin allergy: Azithromycin 500 mg once daily for 3 days",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 7,
+                    "doc_code": "STW-GP-01",
+                    "title": "Acute Pharyngitis — Adult OPD",
+                    "version": "2025.1",
+                    "effective_date": "2025-04-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                    "excerpt": "Penicillin allergy: Azithromycin 500 mg once daily for 3 days"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 2,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "pharyngitis",
+                "penicillin",
+                "allergy"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 7,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 8,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.447,
+                  "semantic": 0.53,
+                  "score": 0.686
+                },
+                {
+                  "chunk_id": 9,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / DO NOT / item 2",
+                  "lexical": 0,
+                  "semantic": 0.281,
+                  "score": 0.459
+                },
+                {
+                  "chunk_id": 6,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0,
+                  "semantic": 0.235,
+                  "score": 0.449
+                },
+                {
+                  "chunk_id": 4,
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "anchor": "p1 / RED FLAGS — REFER / item 2",
+                  "lexical": 0,
+                  "semantic": 0.226,
+                  "score": 0.448
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 7,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 1
+        },
+        {
+          "chunk_id": 8,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.686
+        },
+        {
+          "chunk_id": 9,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / DO NOT / item 2",
+          "score": 0.459
+        },
+        {
+          "chunk_id": 6,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.449
+        },
+        {
+          "chunk_id": 4,
+          "doc_code": "STW-GP-01",
+          "version": "2025.1",
+          "anchor": "p1 / RED FLAGS — REFER / item 2",
+          "score": 0.448
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "set": "supplementary",
+      "question": "Calculate the amoxicillin dose for a 12 kg child with non-severe pneumonia.",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 7 checks passed: Fence test (law 12): text as written, nothing computed.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /Amoxicillin 40 mg\\/kg\\/day/",
+          "pass": true
+        },
+        {
+          "name": "national excludes /\\b480\\b/",
+          "pass": true
+        },
+        {
+          "name": "national excludes /\\b160\\b/",
+          "pass": true
+        },
+        {
+          "name": "notes include /outside this system|not computed|No per-patient/i",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Calculate the amoxicillin dose for a 12 kg child with non-severe pneumonia.",
+        "intent": [
+          "DOSE_TEXT_AS_WRITTEN",
+          "PATIENT_SPECIFIC_CALCULATION_REQUESTED",
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Fast breathing for age without danger signs = non-severe pneumonia",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 69,
+                    "doc_code": "STW-PED-02",
+                    "title": "Community Pneumonia — Child OPD (Non-severe)",
+                    "version": "2023.2",
+                    "effective_date": "2023-11-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "CLASSIFY",
+                    "anchor": "p1 / CLASSIFY / item 1",
+                    "excerpt": "Fast breathing for age without danger signs = non-severe pneumonia"
+                  }
+                ]
+              },
+              {
+                "id": "n2",
+                "text": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 71,
+                    "doc_code": "STW-PED-02",
+                    "title": "Community Pneumonia — Child OPD (Non-severe)",
+                    "version": "2023.2",
+                    "effective_date": "2023-11-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "FIRST-LINE MANAGEMENT",
+                    "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                    "excerpt": "Amoxicillin 40 mg/kg/day in three divided doses for 5 days"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [
+          "Patient-specific dose calculation is outside this system (law 12). Any dose below is the workflow text as written; no amount has been computed for an individual patient."
+        ],
+        "guard": {
+          "numeric_tokens_checked": 2,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "amoxicillin",
+                "kg",
+                "non",
+                "severe",
+                "pneumonia"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 69,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / CLASSIFY / item 1",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 1
+                },
+                {
+                  "chunk_id": 71,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 0.691,
+                  "semantic": 0.677,
+                  "score": 0.812
+                },
+                {
+                  "chunk_id": 74,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.542,
+                  "semantic": 0.367,
+                  "score": 0.688
+                },
+                {
+                  "chunk_id": 72,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.445,
+                  "semantic": 0.276,
+                  "score": 0.631
+                },
+                {
+                  "chunk_id": 66,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.795,
+                  "semantic": 0.84,
+                  "score": 0.586
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 69,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / CLASSIFY / item 1",
+          "score": 1
+        },
+        {
+          "chunk_id": 71,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.812
+        },
+        {
+          "chunk_id": 74,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.688
+        },
+        {
+          "chunk_id": 72,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.631
+        },
+        {
+          "chunk_id": 66,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.586
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "set": "supplementary",
+      "question": "What is the first-line therapy for hypertension in a 7-year-old child?",
+      "expected": "ABSTAIN",
+      "outcome": "CORRECTLY_ABSTAINED",
+      "explanation": "Abstained as expected: Only an adult workflow exists; population mismatch must abstain.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ABSTAINED",
+          "pass": true,
+          "detail": "actual ABSTAINED"
+        },
+        {
+          "name": "block national states what is missing",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the first-line therapy for hypertension in a 7-year-old child?",
+        "intent": [
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ABSTAINED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ABSTAINED",
+            "claims": [],
+            "abstention": {
+              "reason_code": "POPULATION_MISMATCH",
+              "explanation": "The closest workflow is written for a different patient population than the one asked about. Cannot verify an answer from the supplied STW pack.",
+              "missing_evidence": [
+                "no supporting decision unit found"
+              ],
+              "nearest_sources": [
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2021.1",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-PED-02",
+                  "title": "Community Pneumonia — Child OPD (Non-severe)",
+                  "version": "2023.2",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                },
+                {
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "note": "Nearest retrieved document; it does not answer the question and no claim is drawn from it."
+                }
+              ]
+            }
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 0,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "hypertension"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "lexical": 0.261,
+                  "semantic": 0.773,
+                  "score": 0.826
+                },
+                {
+                  "chunk_id": 74,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / DO NOT / item 1",
+                  "lexical": 0.624,
+                  "semantic": 0.475,
+                  "score": 0.743
+                },
+                {
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "version": "2025.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "lexical": 0.246,
+                  "semantic": 0.126,
+                  "score": 0.684
+                },
+                {
+                  "chunk_id": 60,
+                  "doc_code": "STW-ORT-02",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 1,
+                  "semantic": 1,
+                  "score": 0.672
+                },
+                {
+                  "chunk_id": 20,
+                  "doc_code": "STW-GP-02",
+                  "version": "2021.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+                  "lexical": 0.307,
+                  "semantic": 0.377,
+                  "score": 0.671
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 18,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+          "score": 0.826
+        },
+        {
+          "chunk_id": 74,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / DO NOT / item 1",
+          "score": 0.743
+        },
+        {
+          "chunk_id": 12,
+          "doc_code": "STW-GP-02",
+          "version": "2025.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+          "score": 0.684
+        },
+        {
+          "chunk_id": 60,
+          "doc_code": "STW-ORT-02",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.672
+        },
+        {
+          "chunk_id": 20,
+          "doc_code": "STW-GP-02",
+          "version": "2021.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+          "score": 0.671
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "set": "supplementary",
+      "question": "Is nimesulide plus paracetamol banned? What is its regulatory status?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 5 checks passed: Structured fact answered from the event-sourced register, not from clinical documents.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block reg is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "reg includes /PROHIBITED/",
+          "pass": true
+        },
+        {
+          "name": "reg includes /GSR 411\\(E\\)/",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "Is nimesulide plus paracetamol banned? What is its regulatory status?",
+        "intent": [
+          "STRUCTURED_FACT"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "reg",
+            "label": "Regulatory status (answered from the register, not from clinical documents)",
+            "source_type": "REGISTER",
+            "source_label": "Regulatory register (event-sourced)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "r1",
+                "text": "Nimesulide + Paracetamol (all strengths): derived status PROHIBITED as of 2026-10-15 (GSR 411(E), effective 2023-06-15). History: EV001 PROHIBITED eff. 2018-09-12; EV002 STAY_GRANTED eff. 2019-02-11; EV003 PROHIBITED eff. 2023-06-15.",
+                "citations": [
+                  {
+                    "kind": "REGISTER",
+                    "as_of": "2026-10-15",
+                    "event_id": "EV001",
+                    "notification_id": "GSR 704(E)",
+                    "action": "PROHIBITED",
+                    "effective_date": "2018-09-12",
+                    "date_published": "2018-09-07",
+                    "target": "Nimesulide + Paracetamol (all strengths)",
+                    "source_label": "Regulatory register (event-sourced)"
+                  },
+                  {
+                    "kind": "REGISTER",
+                    "as_of": "2026-10-15",
+                    "event_id": "EV002",
+                    "notification_id": "HC-STAY-2019-114",
+                    "action": "STAY_GRANTED",
+                    "effective_date": "2019-02-11",
+                    "date_published": "2019-02-11",
+                    "target": "Nimesulide + Paracetamol (all strengths)",
+                    "source_label": "Regulatory register (event-sourced)"
+                  },
+                  {
+                    "kind": "REGISTER",
+                    "as_of": "2026-10-15",
+                    "event_id": "EV003",
+                    "notification_id": "GSR 411(E)",
+                    "action": "PROHIBITED",
+                    "effective_date": "2023-06-15",
+                    "date_published": "2023-06-02",
+                    "target": "Nimesulide + Paracetamol (all strengths)",
+                    "source_label": "Regulatory register (event-sourced)"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [],
+        "guard": {
+          "numeric_tokens_checked": 19,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": []
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": []
+    },
+    {
+      "id": "S06",
+      "set": "supplementary",
+      "question": "What is the maximum paracetamol dose per day in dengue?",
+      "expected": "ANSWER",
+      "outcome": "CORRECT",
+      "explanation": "All 5 checks passed: Number must come from the cited text.",
+      "checks": [
+        {
+          "name": "citation guard passed (G6)",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "every claim has a citation",
+          "pass": true
+        },
+        {
+          "name": "block national is ANSWERED",
+          "pass": true,
+          "detail": "actual ANSWERED"
+        },
+        {
+          "name": "national includes /max 3 g\\/day/",
+          "pass": true
+        },
+        {
+          "name": "national cites STW-GP-04 v2024.2",
+          "pass": true
+        }
+      ],
+      "response": {
+        "question": "What is the maximum paracetamol dose per day in dengue?",
+        "intent": [
+          "DOSE_TEXT_AS_WRITTEN",
+          "NATIONAL_WORKFLOW"
+        ],
+        "outcome": "ANSWERED",
+        "blocks": [
+          {
+            "block_id": "national",
+            "label": "National workflow pack (STW)",
+            "source_type": "NATIONAL_STW",
+            "source_label": "National workflow (STW one-pager pack)",
+            "status": "ANSWERED",
+            "claims": [
+              {
+                "id": "n1",
+                "text": "Paracetamol 500–650 mg every 6 h for fever (max 3 g/day); adequate oral fluids",
+                "citations": [
+                  {
+                    "kind": "CORPUS",
+                    "chunk_id": 32,
+                    "doc_code": "STW-GP-04",
+                    "title": "Dengue Fever — OPD Management",
+                    "version": "2024.2",
+                    "effective_date": "2024-07-01",
+                    "doc_status": "CURRENT",
+                    "source_type": "NATIONAL_STW",
+                    "source_label": "National workflow (STW one-pager pack)",
+                    "page": 1,
+                    "section": "OPD MANAGEMENT",
+                    "anchor": "p1 / OPD MANAGEMENT / item 1",
+                    "excerpt": "Paracetamol 500–650 mg every 6 h for fever (max 3 g/day); adequate oral fluids"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conflicts": [],
+        "notes": [
+          "Dose statements are reproduced verbatim from the cited workflow. No per-patient amount is calculated."
+        ],
+        "guard": {
+          "numeric_tokens_checked": 4,
+          "ungrounded_numbers": [],
+          "claims_without_citation_dropped": 0,
+          "passed": true
+        },
+        "retrieval": {
+          "index_chunks": 84,
+          "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+          "queries": [
+            {
+              "scope": "NATIONAL_STW",
+              "salient_terms": [
+                "paracetamol",
+                "dengue"
+              ],
+              "unmatched_terms": [],
+              "coverage": 1,
+              "top": [
+                {
+                  "chunk_id": 32,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / OPD MANAGEMENT / item 1",
+                  "lexical": 0.711,
+                  "semantic": 0.632,
+                  "score": 0.81
+                },
+                {
+                  "chunk_id": 67,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+                  "lexical": 0.996,
+                  "semantic": 1,
+                  "score": 0.599
+                },
+                {
+                  "chunk_id": 72,
+                  "doc_code": "STW-PED-02",
+                  "version": "2023.2",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+                  "lexical": 0.996,
+                  "semantic": 0.958,
+                  "score": 0.59
+                },
+                {
+                  "chunk_id": 34,
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "anchor": "p1 / OPD MANAGEMENT / item 3",
+                  "lexical": 0.4,
+                  "semantic": 0.109,
+                  "score": 0.579
+                },
+                {
+                  "chunk_id": 65,
+                  "doc_code": "STW-PED-01",
+                  "version": "2024.1",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+                  "lexical": 1,
+                  "semantic": 0.596,
+                  "score": 0.515
+                }
+              ]
+            }
+          ]
+        },
+        "composer": {
+          "mode": "EXTRACTIVE",
+          "provider": "none",
+          "model": null,
+          "prompt_version": null
+        },
+        "versions": {
+          "retrieval": "hybrid-bm25-ngram-1.0.0",
+          "answerer": "extractive-1.0.0"
+        }
+      },
+      "retrieved_evidence": [
+        {
+          "chunk_id": 32,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / OPD MANAGEMENT / item 1",
+          "score": 0.81
+        },
+        {
+          "chunk_id": 67,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 3",
+          "score": 0.599
+        },
+        {
+          "chunk_id": 72,
+          "doc_code": "STW-PED-02",
+          "version": "2023.2",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 2",
+          "score": 0.59
+        },
+        {
+          "chunk_id": 34,
+          "doc_code": "STW-GP-04",
+          "version": "2024.2",
+          "anchor": "p1 / OPD MANAGEMENT / item 3",
+          "score": 0.579
+        },
+        {
+          "chunk_id": 65,
+          "doc_code": "STW-PED-01",
+          "version": "2024.1",
+          "anchor": "p1 / FIRST-LINE MANAGEMENT / item 1",
+          "score": 0.515
+        }
+      ]
+    }
+  ],
+  "disclaimer": "Criteria were written by the builder from the supplied corpus. This measures retrieval, citation and abstention behaviour against that self-authored key; it is not an independent or clinical accuracy figure."
+}

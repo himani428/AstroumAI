@@ -1,0 +1,1542 @@
+{
+  "trace_type": "BRAHMO_E2E_TRACE",
+  "trace_id": "41c8ecff-0db2-4e27-99a7-51cbcc9fa822",
+  "trace_schema_version": "trace-1.0.0",
+  "generated_at": "2026-10-16T07:10:24.743Z",
+  "as_of": "2026-10-15",
+  "input": {
+    "prescription": [
+      {
+        "line_no": 1,
+        "written_product": "Dolo 650",
+        "strength_as_written": "650 mg",
+        "dose_frequency": "1-0-1 x 5d"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Sinarest Tablet",
+        "dose_frequency": "1-0-1 x 5d"
+      },
+      {
+        "line_no": 3,
+        "written_product": "Telma",
+        "dose_frequency": "1-0-0"
+      }
+    ],
+    "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension?"
+  },
+  "stages": {
+    "1_normalization": {
+      "version": "normalize-1.0.0",
+      "lines": [
+        {
+          "line_no": 1,
+          "written_product": "Dolo 650",
+          "strength_as_written": "650 mg",
+          "resolution": {
+            "status": "RESOLVED",
+            "confidence": 0.98,
+            "method": "exact_brand_unique",
+            "reason_codes": [],
+            "warnings": [],
+            "candidates": [
+              {
+                "product_id": "CD1000",
+                "label": "Dolo 650 | Micro Labs | Tablet | Paracetamol 650 mg",
+                "score": 0.98,
+                "basis": "exact_brand_unique"
+              }
+            ],
+            "queue_id": null
+          },
+          "product": {
+            "product_id": "CD1000",
+            "brand_name": "Dolo 650",
+            "dose_form": "Tablet",
+            "strength_text": "Paracetamol 650 mg",
+            "ingredients": [
+              {
+                "name": "Paracetamol",
+                "value": 650,
+                "unit": "mg"
+              }
+            ],
+            "provenance": {
+              "source": "CDCI-SUBSET-2026Q2",
+              "source_version": "2026-06-30",
+              "batch_id": 1,
+              "source_row_id": 1
+            }
+          }
+        },
+        {
+          "line_no": 2,
+          "written_product": "Sinarest Tablet",
+          "strength_as_written": null,
+          "resolution": {
+            "status": "RESOLVED",
+            "confidence": 0.85,
+            "method": "exact_brand_unique",
+            "reason_codes": [],
+            "warnings": [
+              "STRENGTH_NOT_WRITTEN"
+            ],
+            "candidates": [
+              {
+                "product_id": "CD1021",
+                "label": "Sinarest Tablet | Centaur | Tablet | Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg",
+                "score": 0.85,
+                "basis": "exact_brand_unique"
+              }
+            ],
+            "queue_id": null
+          },
+          "product": {
+            "product_id": "CD1021",
+            "brand_name": "Sinarest Tablet",
+            "dose_form": "Tablet",
+            "strength_text": "Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg",
+            "ingredients": [
+              {
+                "name": "Paracetamol",
+                "value": 500,
+                "unit": "mg"
+              },
+              {
+                "name": "Chlorpheniramine",
+                "value": 2,
+                "unit": "mg"
+              },
+              {
+                "name": "Phenylephrine",
+                "value": 10,
+                "unit": "mg"
+              }
+            ],
+            "provenance": {
+              "source": "CDCI-SUBSET-2026Q2",
+              "source_version": "2026-06-30",
+              "batch_id": 1,
+              "source_row_id": 22
+            }
+          }
+        },
+        {
+          "line_no": 3,
+          "written_product": "Telma",
+          "strength_as_written": null,
+          "resolution": {
+            "status": "NEEDS_REVIEW",
+            "confidence": 0.7,
+            "method": "fuzzy_assist",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "FUZZY_CANDIDATES_ONLY"
+            ],
+            "warnings": [],
+            "candidates": [
+              {
+                "product_id": "CD1009",
+                "label": "Telma 20 | Glenmark | Tablet | Telmisartan 20 mg",
+                "score": 0.7,
+                "basis": "prefix_match"
+              },
+              {
+                "product_id": "CD1010",
+                "label": "Telma 40 | Glenmark | Tablet | Telmisartan 40 mg",
+                "score": 0.7,
+                "basis": "prefix_match"
+              },
+              {
+                "product_id": "CD1011",
+                "label": "Telma 80 | Glenmark | Tablet | Telmisartan 80 mg",
+                "score": 0.7,
+                "basis": "prefix_match"
+              },
+              {
+                "product_id": "CD1024",
+                "label": "Telma-H 40 | Glenmark | Tablet | Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg",
+                "score": 0.7,
+                "basis": "prefix_match"
+              }
+            ],
+            "queue_id": 1204
+          },
+          "product": null
+        }
+      ],
+      "unresolved_mappings": [
+        {
+          "line_no": 3,
+          "written_product": "Telma",
+          "status": "NEEDS_REVIEW",
+          "reason_codes": [
+            "NO_EXACT_BRAND_MATCH",
+            "FUZZY_CANDIDATES_ONLY"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1009",
+              "label": "Telma 20 | Glenmark | Tablet | Telmisartan 20 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1010",
+              "label": "Telma 40 | Glenmark | Tablet | Telmisartan 40 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1011",
+              "label": "Telma 80 | Glenmark | Tablet | Telmisartan 80 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1024",
+              "label": "Telma-H 40 | Glenmark | Tablet | Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            }
+          ],
+          "review_queue_id": 1204
+        }
+      ]
+    },
+    "2_safety_rail": {
+      "rule_version": "rail-1.0.0",
+      "llm_used_in_safety_path": false,
+      "report": {
+        "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "as_of": "2026-10-15",
+        "executed_at": "2026-10-16T07:10:24.696Z",
+        "llm_used_in_safety_path": false,
+        "data_versions": [
+          {
+            "dataset": "cdci",
+            "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "source_date": "2026-06-30",
+            "freshness_basis": "DECLARED_SOURCE_DATE",
+            "loaded_at": "2026-10-16T07:06:05.467Z",
+            "max_age_days": 180,
+            "batch_id": 1,
+            "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+            "row_count": 2000
+          },
+          {
+            "dataset": "interactions",
+            "version_label": "public-high-priority-2026",
+            "source_date": null,
+            "freshness_basis": "LOAD_TIME_ONLY",
+            "loaded_at": "2026-10-16T07:06:05.618Z",
+            "max_age_days": 90,
+            "batch_id": 5,
+            "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+            "row_count": 15
+          },
+          {
+            "dataset": "janAushadhi",
+            "version_label": "PMBJP-2026-05",
+            "source_date": "2026-05-01",
+            "freshness_basis": "DECLARED_SOURCE_DATE",
+            "loaded_at": "2026-10-16T07:06:05.573Z",
+            "max_age_days": 180,
+            "batch_id": 3,
+            "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+            "row_count": 50
+          },
+          {
+            "dataset": "nlem",
+            "version_label": "NLEM 2022",
+            "source_date": null,
+            "freshness_basis": "LOAD_TIME_ONLY",
+            "loaded_at": "2026-10-16T07:06:05.517Z",
+            "max_age_days": 730,
+            "batch_id": 2,
+            "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+            "row_count": 63
+          },
+          {
+            "dataset": "regulatory",
+            "version_label": "12 events",
+            "source_date": null,
+            "freshness_basis": "LOAD_TIME_ONLY",
+            "loaded_at": "2026-10-16T07:06:05.587Z",
+            "max_age_days": 90,
+            "batch_id": 4,
+            "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+            "row_count": 12
+          },
+          {
+            "dataset": "seedRx",
+            "version_label": "10 draft prescriptions",
+            "source_date": null,
+            "freshness_basis": "LOAD_TIME_ONLY",
+            "loaded_at": "2026-10-16T07:06:05.853Z",
+            "max_age_days": 3650,
+            "batch_id": 7,
+            "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+            "row_count": 17
+          },
+          {
+            "dataset": "stock",
+            "version_label": "clinic stock file",
+            "source_date": null,
+            "freshness_basis": "LOAD_TIME_ONLY",
+            "loaded_at": "2026-10-16T07:06:05.844Z",
+            "max_age_days": 30,
+            "batch_id": 6,
+            "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+            "row_count": 783
+          }
+        ],
+        "lines": [
+          {
+            "line_no": 1,
+            "written_product": "Dolo 650",
+            "strength_as_written": "650 mg",
+            "dose_frequency": "1-0-1 x 5d",
+            "resolution": {
+              "status": "RESOLVED",
+              "confidence": 0.98,
+              "method": "exact_brand_unique",
+              "reason_codes": [],
+              "warnings": [],
+              "candidates": [
+                {
+                  "product_id": "CD1000",
+                  "label": "Dolo 650 | Micro Labs | Tablet | Paracetamol 650 mg",
+                  "score": 0.98,
+                  "basis": "exact_brand_unique"
+                }
+              ],
+              "queue_id": null
+            },
+            "product_id": "CD1000",
+            "resolved_brand": "Dolo 650",
+            "ingredients": [
+              {
+                "name": "Paracetamol",
+                "strength": "650 mg"
+              }
+            ]
+          },
+          {
+            "line_no": 2,
+            "written_product": "Sinarest Tablet",
+            "strength_as_written": null,
+            "dose_frequency": "1-0-1 x 5d",
+            "resolution": {
+              "status": "RESOLVED",
+              "confidence": 0.85,
+              "method": "exact_brand_unique",
+              "reason_codes": [],
+              "warnings": [
+                "STRENGTH_NOT_WRITTEN"
+              ],
+              "candidates": [
+                {
+                  "product_id": "CD1021",
+                  "label": "Sinarest Tablet | Centaur | Tablet | Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg",
+                  "score": 0.85,
+                  "basis": "exact_brand_unique"
+                }
+              ],
+              "queue_id": null
+            },
+            "product_id": "CD1021",
+            "resolved_brand": "Sinarest Tablet",
+            "ingredients": [
+              {
+                "name": "Paracetamol",
+                "strength": "500 mg"
+              },
+              {
+                "name": "Chlorpheniramine",
+                "strength": "2 mg"
+              },
+              {
+                "name": "Phenylephrine",
+                "strength": "10 mg"
+              }
+            ]
+          },
+          {
+            "line_no": 3,
+            "written_product": "Telma",
+            "strength_as_written": null,
+            "dose_frequency": "1-0-0",
+            "resolution": {
+              "status": "NEEDS_REVIEW",
+              "confidence": 0.7,
+              "method": "fuzzy_assist",
+              "reason_codes": [
+                "NO_EXACT_BRAND_MATCH",
+                "FUZZY_CANDIDATES_ONLY"
+              ],
+              "warnings": [],
+              "candidates": [
+                {
+                  "product_id": "CD1009",
+                  "label": "Telma 20 | Glenmark | Tablet | Telmisartan 20 mg",
+                  "score": 0.7,
+                  "basis": "prefix_match"
+                },
+                {
+                  "product_id": "CD1010",
+                  "label": "Telma 40 | Glenmark | Tablet | Telmisartan 40 mg",
+                  "score": 0.7,
+                  "basis": "prefix_match"
+                },
+                {
+                  "product_id": "CD1011",
+                  "label": "Telma 80 | Glenmark | Tablet | Telmisartan 80 mg",
+                  "score": 0.7,
+                  "basis": "prefix_match"
+                },
+                {
+                  "product_id": "CD1024",
+                  "label": "Telma-H 40 | Glenmark | Tablet | Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg",
+                  "score": 0.7,
+                  "basis": "prefix_match"
+                }
+              ],
+              "queue_id": 1204
+            },
+            "product_id": null,
+            "resolved_brand": null,
+            "ingredients": []
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "DUPLICATE_INGREDIENT",
+            "rule_id": "RAIL.DUP.1",
+            "status": "HIT",
+            "severity": "MODERATE",
+            "explanation": "paracetamol appears in 2 lines (#1 Dolo 650, #2 Sinarest Tablet); aggregate 2300 mg/day.",
+            "evidence": [
+              {
+                "ingredient": "paracetamol",
+                "contributing_lines": [
+                  {
+                    "line_no": 1,
+                    "brand": "Dolo 650",
+                    "product_id": "CD1000",
+                    "dose_form": "Tablet",
+                    "strength_per_unit": "650 mg",
+                    "frequency_raw": "1-0-1 x 5d",
+                    "units_per_day": 2,
+                    "daily_mg": 1300,
+                    "computable": true,
+                    "reasons": [],
+                    "flags": []
+                  },
+                  {
+                    "line_no": 2,
+                    "brand": "Sinarest Tablet",
+                    "product_id": "CD1021",
+                    "dose_form": "Tablet",
+                    "strength_per_unit": "500 mg",
+                    "frequency_raw": "1-0-1 x 5d",
+                    "units_per_day": 2,
+                    "daily_mg": 1000,
+                    "computable": true,
+                    "reasons": [],
+                    "flags": []
+                  }
+                ],
+                "aggregate": {
+                  "total_daily_mg": 2300,
+                  "is_lower_bound": false,
+                  "complete": true,
+                  "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+                },
+                "reference_ceiling": {
+                  "value": 3000,
+                  "unit": "mg",
+                  "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+                  "exceeded": false,
+                  "context": "Cited population reference from the supplied corpus; not patient-specific.",
+                  "sources": [
+                    {
+                      "doc_code": "STW-GP-01",
+                      "version": "2025.1",
+                      "page": 1,
+                      "section": "FIRST-LINE MANAGEMENT"
+                    },
+                    {
+                      "doc_code": "STW-GP-04",
+                      "version": "2024.2",
+                      "page": 1,
+                      "section": "OPD MANAGEMENT"
+                    }
+                  ]
+                }
+              }
+            ],
+            "affected_products": [
+              {
+                "line_no": 1,
+                "product_id": "CD1000",
+                "brand_name": "Dolo 650"
+              },
+              {
+                "line_no": 2,
+                "product_id": "CD1021",
+                "brand_name": "Sinarest Tablet"
+              }
+            ],
+            "affected_ingredients": [
+              "paracetamol"
+            ],
+            "source_references": [
+              {
+                "dataset": "cdci",
+                "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1000",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 1,
+                "detail": "Dolo 650 (Paracetamol 650 mg)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1021",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 22,
+                "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+              }
+            ],
+            "rule_version": "rail-1.0.0",
+            "data_version": "dv-6d3ab5cafd7b",
+            "data_dependencies": [
+              "cdci"
+            ],
+            "executed_at": "2026-10-16T07:10:24.696Z",
+            "unresolved_inputs": [
+              {
+                "line_no": 3,
+                "written_product": "Telma",
+                "status": "NEEDS_REVIEW",
+                "reason_codes": [
+                  "NO_EXACT_BRAND_MATCH",
+                  "FUZZY_CANDIDATES_ONLY"
+                ],
+                "queue_id": 1204
+              }
+            ],
+            "limitations": [
+              "1 line(s) could not be resolved and were not examined"
+            ]
+          },
+          {
+            "check_type": "PROHIBITED_FDC",
+            "rule_id": "RAIL.REG.1",
+            "status": "PARTIAL_COVERAGE",
+            "severity": "INFO",
+            "explanation": "1 line(s) are unresolved and were not examined.",
+            "evidence": [],
+            "affected_products": [
+              {
+                "line_no": 1,
+                "product_id": "CD1000",
+                "brand_name": "Dolo 650"
+              },
+              {
+                "line_no": 2,
+                "product_id": "CD1021",
+                "brand_name": "Sinarest Tablet"
+              }
+            ],
+            "affected_ingredients": [],
+            "source_references": [
+              {
+                "dataset": "cdci",
+                "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+              },
+              {
+                "dataset": "regulatory",
+                "ref": "12 events",
+                "version": "2026-10-16T07:06:05.587Z",
+                "batch_id": 4,
+                "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1000",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 1,
+                "detail": "Dolo 650 (Paracetamol 650 mg)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1021",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 22,
+                "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+              }
+            ],
+            "rule_version": "rail-1.0.0",
+            "data_version": "dv-6d3ab5cafd7b",
+            "data_dependencies": [
+              "cdci",
+              "regulatory"
+            ],
+            "executed_at": "2026-10-16T07:10:24.696Z",
+            "unresolved_inputs": [
+              {
+                "line_no": 3,
+                "written_product": "Telma",
+                "status": "NEEDS_REVIEW",
+                "reason_codes": [
+                  "NO_EXACT_BRAND_MATCH",
+                  "FUZZY_CANDIDATES_ONLY"
+                ],
+                "queue_id": 1204
+              }
+            ],
+            "limitations": [
+              "regulatory has no declared as-of date; freshness is measured from load time only",
+              "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+            ]
+          },
+          {
+            "check_type": "SEVERE_INTERACTION",
+            "rule_id": "RAIL.INT.1",
+            "status": "PARTIAL_COVERAGE",
+            "severity": "INFO",
+            "explanation": "No seed-list pair among resolved lines, but 1 line(s) are unresolved and were not examined.",
+            "evidence": [
+              {
+                "coverage": {
+                  "scope": "SEED_LIST_ONLY",
+                  "seed_pairs_total": 15,
+                  "seed_pairs_evaluable_against_drug_master": 4,
+                  "seed_pairs_not_evaluable": [
+                    "Warfarin + Amiodarone",
+                    "Methotrexate + Trimethoprim",
+                    "Sildenafil + Nitrates",
+                    "Clarithromycin + Colchicine",
+                    "Lithium + Ibuprofen",
+                    "Digoxin + Clarithromycin",
+                    "Theophylline + Ciprofloxacin",
+                    "Spironolactone + Potassium Chloride",
+                    "Enalapril + Potassium Chloride",
+                    "Carbamazepine + Erythromycin",
+                    "Dabigatran + Ketoconazole"
+                  ],
+                  "prescribed_ingredients_without_any_seed_coverage": [
+                    "paracetamol",
+                    "chlorpheniramine",
+                    "phenylephrine"
+                  ]
+                }
+              }
+            ],
+            "affected_products": [
+              {
+                "line_no": 1,
+                "product_id": "CD1000",
+                "brand_name": "Dolo 650"
+              },
+              {
+                "line_no": 2,
+                "product_id": "CD1021",
+                "brand_name": "Sinarest Tablet"
+              }
+            ],
+            "affected_ingredients": [],
+            "source_references": [
+              {
+                "dataset": "cdci",
+                "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+              },
+              {
+                "dataset": "interactions",
+                "ref": "public-high-priority-2026",
+                "version": "2026-10-16T07:06:05.618Z",
+                "batch_id": 5,
+                "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1000",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 1,
+                "detail": "Dolo 650 (Paracetamol 650 mg)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1021",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 22,
+                "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+              }
+            ],
+            "rule_version": "rail-1.0.0",
+            "data_version": "dv-6d3ab5cafd7b",
+            "data_dependencies": [
+              "cdci",
+              "interactions"
+            ],
+            "executed_at": "2026-10-16T07:10:24.696Z",
+            "unresolved_inputs": [
+              {
+                "line_no": 3,
+                "written_product": "Telma",
+                "status": "NEEDS_REVIEW",
+                "reason_codes": [
+                  "NO_EXACT_BRAND_MATCH",
+                  "FUZZY_CANDIDATES_ONLY"
+                ],
+                "queue_id": 1204
+              }
+            ],
+            "limitations": [
+              "interactions has no declared as-of date; freshness is measured from load time only",
+              "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+              "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+            ]
+          },
+          {
+            "check_type": "CUMULATIVE_EXPOSURE",
+            "rule_id": "RAIL.CUM.1",
+            "status": "PARTIAL_COVERAGE",
+            "severity": "INFO",
+            "explanation": "paracetamol: 2300 mg/day (complete); ceiling 3000 mg/day not exceeded. Coverage is incomplete; this is not an all-clear.",
+            "evidence": [
+              {
+                "ingredient": "paracetamol",
+                "contributing_lines": [
+                  {
+                    "line_no": 1,
+                    "brand": "Dolo 650",
+                    "product_id": "CD1000",
+                    "dose_form": "Tablet",
+                    "strength_per_unit": "650 mg",
+                    "frequency_raw": "1-0-1 x 5d",
+                    "units_per_day": 2,
+                    "daily_mg": 1300,
+                    "computable": true,
+                    "reasons": [],
+                    "flags": []
+                  },
+                  {
+                    "line_no": 2,
+                    "brand": "Sinarest Tablet",
+                    "product_id": "CD1021",
+                    "dose_form": "Tablet",
+                    "strength_per_unit": "500 mg",
+                    "frequency_raw": "1-0-1 x 5d",
+                    "units_per_day": 2,
+                    "daily_mg": 1000,
+                    "computable": true,
+                    "reasons": [],
+                    "flags": []
+                  }
+                ],
+                "aggregate": {
+                  "total_daily_mg": 2300,
+                  "is_lower_bound": false,
+                  "complete": true,
+                  "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+                },
+                "reference_ceiling": {
+                  "value": 3000,
+                  "unit": "mg",
+                  "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+                  "exceeded": false,
+                  "context": "Cited population reference from the supplied corpus; not patient-specific.",
+                  "sources": [
+                    {
+                      "doc_code": "STW-GP-01",
+                      "version": "2025.1",
+                      "page": 1,
+                      "section": "FIRST-LINE MANAGEMENT"
+                    },
+                    {
+                      "doc_code": "STW-GP-04",
+                      "version": "2024.2",
+                      "page": 1,
+                      "section": "OPD MANAGEMENT"
+                    }
+                  ]
+                }
+              }
+            ],
+            "affected_products": [
+              {
+                "line_no": 1,
+                "product_id": "CD1000",
+                "brand_name": "Dolo 650"
+              },
+              {
+                "line_no": 2,
+                "product_id": "CD1021",
+                "brand_name": "Sinarest Tablet"
+              }
+            ],
+            "affected_ingredients": [
+              "paracetamol"
+            ],
+            "source_references": [
+              {
+                "dataset": "cdci",
+                "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1000",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 1,
+                "detail": "Dolo 650 (Paracetamol 650 mg)"
+              },
+              {
+                "dataset": "cdci",
+                "ref": "CD1021",
+                "version": "2026-06-30",
+                "batch_id": 1,
+                "source_row_id": 22,
+                "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+              }
+            ],
+            "rule_version": "rail-1.0.0",
+            "data_version": "dv-6d3ab5cafd7b",
+            "data_dependencies": [
+              "cdci"
+            ],
+            "executed_at": "2026-10-16T07:10:24.696Z",
+            "unresolved_inputs": [
+              {
+                "line_no": 3,
+                "written_product": "Telma",
+                "status": "NEEDS_REVIEW",
+                "reason_codes": [
+                  "NO_EXACT_BRAND_MATCH",
+                  "FUZZY_CANDIDATES_ONLY"
+                ],
+                "queue_id": 1204
+              }
+            ],
+            "limitations": []
+          }
+        ],
+        "summary": {
+          "counts": {
+            "HIT": 1,
+            "PARTIAL_COVERAGE": 3
+          },
+          "critical_findings": 0,
+          "all_checks_clean": false,
+          "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+        }
+      }
+    },
+    "3_grounded_answer": {
+      "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension?",
+      "intent": [
+        "NATIONAL_WORKFLOW"
+      ],
+      "outcome": "ANSWERED",
+      "blocks": [
+        {
+          "block_id": "national",
+          "label": "National workflow pack (STW): current edition 2025.2",
+          "source_type": "NATIONAL_STW",
+          "source_label": "National workflow (STW one-pager pack)",
+          "status": "ANSWERED",
+          "claims": [
+            {
+              "id": "v2025.2-1",
+              "text": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "REFER",
+                  "anchor": "p1 / REFER / item 1",
+                  "excerpt": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy"
+                }
+              ]
+            },
+            {
+              "id": "v2025.2-2",
+              "text": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "excerpt": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily"
+                }
+              ]
+            },
+            {
+              "id": "v2025.2-3",
+              "text": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 13,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 2",
+                  "excerpt": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "topic": "Hypertension",
+          "kind": "EDITION_DIFFERENCE",
+          "versions": [
+            {
+              "doc_code": "STW-GP-02",
+              "title": "Hypertension — Initial Management (Adult)",
+              "version": "2025.2",
+              "effective_date": "2025-06-01",
+              "doc_status": "CURRENT",
+              "claims": [
+                {
+                  "id": "v2025.2-1",
+                  "text": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy",
+                  "citations": [
+                    {
+                      "kind": "CORPUS",
+                      "chunk_id": 16,
+                      "doc_code": "STW-GP-02",
+                      "title": "Hypertension — Initial Management (Adult)",
+                      "version": "2025.2",
+                      "effective_date": "2025-06-01",
+                      "doc_status": "CURRENT",
+                      "source_type": "NATIONAL_STW",
+                      "source_label": "National workflow (STW one-pager pack)",
+                      "page": 1,
+                      "section": "REFER",
+                      "anchor": "p1 / REFER / item 1",
+                      "excerpt": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy"
+                    }
+                  ]
+                },
+                {
+                  "id": "v2025.2-2",
+                  "text": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily",
+                  "citations": [
+                    {
+                      "kind": "CORPUS",
+                      "chunk_id": 12,
+                      "doc_code": "STW-GP-02",
+                      "title": "Hypertension — Initial Management (Adult)",
+                      "version": "2025.2",
+                      "effective_date": "2025-06-01",
+                      "doc_status": "CURRENT",
+                      "source_type": "NATIONAL_STW",
+                      "source_label": "National workflow (STW one-pager pack)",
+                      "page": 1,
+                      "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                      "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                      "excerpt": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily"
+                    }
+                  ]
+                },
+                {
+                  "id": "v2025.2-3",
+                  "text": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan",
+                  "citations": [
+                    {
+                      "kind": "CORPUS",
+                      "chunk_id": 13,
+                      "doc_code": "STW-GP-02",
+                      "title": "Hypertension — Initial Management (Adult)",
+                      "version": "2025.2",
+                      "effective_date": "2025-06-01",
+                      "doc_status": "CURRENT",
+                      "source_type": "NATIONAL_STW",
+                      "source_label": "National workflow (STW one-pager pack)",
+                      "page": 1,
+                      "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                      "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 2",
+                      "excerpt": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_code": "STW-GP-02",
+              "title": "Hypertension — Initial Management (Adult)",
+              "version": "2021.1",
+              "effective_date": "2021-02-01",
+              "doc_status": "SUPERSEDED",
+              "claims": [
+                {
+                  "id": "v2021.1-1",
+                  "text": "Start Atenolol 50 mg once daily as initial monotherapy",
+                  "citations": [
+                    {
+                      "kind": "CORPUS",
+                      "chunk_id": 18,
+                      "doc_code": "STW-GP-02",
+                      "title": "Hypertension — Initial Management (Adult)",
+                      "version": "2021.1",
+                      "effective_date": "2021-02-01",
+                      "doc_status": "SUPERSEDED",
+                      "source_type": "NATIONAL_STW",
+                      "source_label": "National workflow (STW one-pager pack)",
+                      "page": 1,
+                      "section": "FIRST-LINE MANAGEMENT (THIS 2021 EDITION)",
+                      "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                      "excerpt": "Start Atenolol 50 mg once daily as initial monotherapy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "The pack holds more than one edition of this workflow. Both are shown with their dates and are not merged. The newer page declares that it supersedes the older one and the older page carries an archive notice; that metadata is reported, not re-judged."
+        }
+      ],
+      "notes": [
+        "Several editions of this workflow exist; see the edition comparison below."
+      ],
+      "guard": {
+        "numeric_tokens_checked": 9,
+        "ungrounded_numbers": [],
+        "claims_without_citation_dropped": 0,
+        "passed": true
+      },
+      "retrieval": {
+        "index_chunks": 84,
+        "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+        "queries": [
+          {
+            "scope": "NATIONAL_STW",
+            "salient_terms": [
+              "hypertension"
+            ],
+            "unmatched_terms": [],
+            "coverage": 1,
+            "top": [
+              {
+                "chunk_id": 18,
+                "doc_code": "STW-GP-02",
+                "version": "2021.1",
+                "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                "lexical": 0.885,
+                "semantic": 1,
+                "score": 1.117
+              },
+              {
+                "chunk_id": 16,
+                "doc_code": "STW-GP-02",
+                "version": "2025.2",
+                "anchor": "p1 / REFER / item 1",
+                "lexical": 0.709,
+                "semantic": 0.497,
+                "score": 0.691
+              },
+              {
+                "chunk_id": 12,
+                "doc_code": "STW-GP-02",
+                "version": "2025.2",
+                "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                "lexical": 0.246,
+                "semantic": 0.133,
+                "score": 0.686
+              },
+              {
+                "chunk_id": 20,
+                "doc_code": "STW-GP-02",
+                "version": "2021.1",
+                "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+                "lexical": 0.307,
+                "semantic": 0.344,
+                "score": 0.664
+              },
+              {
+                "chunk_id": 21,
+                "doc_code": "STW-GP-02",
+                "version": "2021.1",
+                "anchor": "p1 / TARGETS / item 1",
+                "lexical": 0.648,
+                "semantic": 0.473,
+                "score": 0.662
+              }
+            ]
+          }
+        ]
+      },
+      "composer": {
+        "mode": "EXTRACTIVE",
+        "provider": "none",
+        "model": null,
+        "prompt_version": null
+      },
+      "versions": {
+        "retrieval": "hybrid-bm25-ngram-1.0.0",
+        "answerer": "extractive-1.0.0"
+      }
+    }
+  },
+  "conflicting_evidence": [
+    {
+      "topic": "Hypertension",
+      "kind": "EDITION_DIFFERENCE",
+      "versions": [
+        {
+          "doc_code": "STW-GP-02",
+          "title": "Hypertension — Initial Management (Adult)",
+          "version": "2025.2",
+          "effective_date": "2025-06-01",
+          "doc_status": "CURRENT",
+          "claims": [
+            {
+              "id": "v2025.2-1",
+              "text": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 16,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "REFER",
+                  "anchor": "p1 / REFER / item 1",
+                  "excerpt": "Resistant HTN on 3 drugs; suspected secondary cause; pregnancy"
+                }
+              ]
+            },
+            {
+              "id": "v2025.2-2",
+              "text": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 12,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+                  "excerpt": "Start Amlodipine 5 mg once daily OR Telmisartan 40 mg once daily"
+                }
+              ]
+            },
+            {
+              "id": "v2025.2-3",
+              "text": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 13,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2025.2",
+                  "effective_date": "2025-06-01",
+                  "doc_status": "CURRENT",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT (CURRENT)",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 2",
+                  "excerpt": "Uncontrolled at 4 weeks: combine Amlodipine + Telmisartan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "doc_code": "STW-GP-02",
+          "title": "Hypertension — Initial Management (Adult)",
+          "version": "2021.1",
+          "effective_date": "2021-02-01",
+          "doc_status": "SUPERSEDED",
+          "claims": [
+            {
+              "id": "v2021.1-1",
+              "text": "Start Atenolol 50 mg once daily as initial monotherapy",
+              "citations": [
+                {
+                  "kind": "CORPUS",
+                  "chunk_id": 18,
+                  "doc_code": "STW-GP-02",
+                  "title": "Hypertension — Initial Management (Adult)",
+                  "version": "2021.1",
+                  "effective_date": "2021-02-01",
+                  "doc_status": "SUPERSEDED",
+                  "source_type": "NATIONAL_STW",
+                  "source_label": "National workflow (STW one-pager pack)",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT (THIS 2021 EDITION)",
+                  "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+                  "excerpt": "Start Atenolol 50 mg once daily as initial monotherapy"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "The pack holds more than one edition of this workflow. Both are shown with their dates and are not merged. The newer page declares that it supersedes the older one and the older page carries an archive notice; that metadata is reported, not re-judged."
+    }
+  ],
+  "versions": {
+    "datasets": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "data_fingerprint": "dv-6d3ab5cafd7b",
+    "corpus_documents": [
+      {
+        "doc_code": "SOP-CLIN-014",
+        "version": "2.1",
+        "status": "LOCAL_PROTOCOL",
+        "effective_date": "2026-03-10",
+        "file_name": "local_protocol_acute_fever.md",
+        "file_sha256": "d9782feaed0b1e2ca2916f2c33e440331f57f6821ea3e6aebbfc4b9cb3a27899"
+      },
+      {
+        "doc_code": "STW-GP-01",
+        "version": "2025.1",
+        "status": "CURRENT",
+        "effective_date": "2025-04-01",
+        "file_name": "STW_GP_01_Acute_Pharyngitis.pdf",
+        "file_sha256": "4c60e42352c7c8b9cf11202d543e035cf864fd116e4be788828dd052c581a980"
+      },
+      {
+        "doc_code": "STW-GP-02",
+        "version": "2021.1",
+        "status": "SUPERSEDED",
+        "effective_date": "2021-02-01",
+        "file_name": "STW_GP_02_Hypertension_Initial_v2021.pdf",
+        "file_sha256": "25b577a05e10cc4366ad89caa0a93ce5555efce0a30cc0eeb9c54c3a87ca3953"
+      },
+      {
+        "doc_code": "STW-GP-02",
+        "version": "2025.2",
+        "status": "CURRENT",
+        "effective_date": "2025-06-01",
+        "file_name": "STW_GP_02_Hypertension_Initial.pdf",
+        "file_sha256": "20af43c6651a3a893255276d9f88555d2203782894768406b8374b148cc676d0"
+      },
+      {
+        "doc_code": "STW-GP-03",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-09-01",
+        "file_name": "STW_GP_03_T2DM_Initiation.pdf",
+        "file_sha256": "0c367e0161e6173568efe5d76fffc27033dc161d09e34ce0491ee7969a7063e2"
+      },
+      {
+        "doc_code": "STW-GP-04",
+        "version": "2024.2",
+        "status": "CURRENT",
+        "effective_date": "2024-07-01",
+        "file_name": "STW_GP_04_Dengue_OPD.pdf",
+        "file_sha256": "b3c1a7b4a358bec04538f9ebe2a157c3f7c070c732881ad76bc0c453257f4e95"
+      },
+      {
+        "doc_code": "STW-GYN-01",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-08-01",
+        "file_name": "STW_GYN_01_IDA_Pregnancy.pdf",
+        "file_sha256": "49ac9a266985f689b41b789f7ce43e88d41874a40442c8ea08670d1c5674cf16"
+      },
+      {
+        "doc_code": "STW-GYN-02",
+        "version": "2023.1",
+        "status": "CURRENT",
+        "effective_date": "2023-06-01",
+        "file_name": "STW_GYN_02_UTI_Pregnancy.pdf",
+        "file_sha256": "214e172dafce674cc1883897ddccf331e669ec5d21f8f728abb57f7509d8720b"
+      },
+      {
+        "doc_code": "STW-GYN-03",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-10-01",
+        "file_name": "STW_GYN_03_PCOS_Initial.pdf",
+        "file_sha256": "45464f6754dbbeaade5d54f8ba598ac6a9abf1202794428c29704964c3734aab"
+      },
+      {
+        "doc_code": "STW-ORT-01",
+        "version": "2023.1",
+        "status": "CURRENT",
+        "effective_date": "2023-09-01",
+        "file_name": "STW_ORT_01_Acute_Low_Back_Pain.pdf",
+        "file_sha256": "1c85401375e5bf9c9bcac303f88c0e40587ab58128bd1cd235e598fd9f404a69"
+      },
+      {
+        "doc_code": "STW-ORT-02",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-04-01",
+        "file_name": "STW_ORT_02_Knee_OA.pdf",
+        "file_sha256": "fc64fe805d10d4ff91dbe36a6cc0c5574db1e3129968e6106063c17cd444e2c8"
+      },
+      {
+        "doc_code": "STW-PED-01",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-05-01",
+        "file_name": "STW_PED_01_Acute_Otitis_Media.pdf",
+        "file_sha256": "eabcbbb2966f56647e7772dbebef9f78ad57e6964e4194b4059a01d69d851e3b"
+      },
+      {
+        "doc_code": "STW-PED-02",
+        "version": "2023.2",
+        "status": "CURRENT",
+        "effective_date": "2023-11-01",
+        "file_name": "STW_PED_02_Childhood_Pneumonia_OPD.pdf",
+        "file_sha256": "2586c1533165ecfa6c495713b05a3c95cbb227b9ae794145e03d2e5087b7131a"
+      },
+      {
+        "doc_code": "STW-PED-03",
+        "version": "2024.1",
+        "status": "CURRENT",
+        "effective_date": "2024-03-01",
+        "file_name": "STW_PED_03_Acute_Gastroenteritis.pdf",
+        "file_sha256": "209e7e252d86cacf86c4c44371e056214b0a7e35b204e16f70115e8a4024ddae"
+      }
+    ],
+    "rules": {
+      "safety_rail": "rail-1.0.0",
+      "regulatory_derivation": "regstatus-1.0.0"
+    },
+    "prompts": [
+      {
+        "file": "dev/01_working_method.md",
+        "id": "dev-working-method",
+        "version": "1.0.0",
+        "status": "documentation",
+        "used_by": "development (AI coding assistant)",
+        "sha256": "cc36e4fc81b4e9da3ed7edc170a5606fdfbb5f825a6d5efc552940f1d72a8a09"
+      },
+      {
+        "file": "qa-composer.v1.md",
+        "id": "qa-composer",
+        "version": "1.0.0",
+        "status": "optional",
+        "used_by": "server/src/qa/llm.ts",
+        "sha256": "a9e433ffff12d9c023c198219ac7a6ca6abf28d33bdc054259e9c54b16e7d3fb"
+      }
+    ],
+    "pipeline": {
+      "normalizer": "normalize-1.0.0",
+      "chunker": "chunker-1.0.0",
+      "retrieval": "hybrid-bm25-ngram-1.0.0",
+      "answerer": "extractive-1.0.0"
+    },
+    "models": {
+      "safety_rail": "none (deterministic lookup; no model in this path)",
+      "grounded_answer": {
+        "mode": "EXTRACTIVE",
+        "provider": "none",
+        "model": null,
+        "prompt_version": null
+      }
+    }
+  },
+  "retrieval_metadata": {
+    "index_chunks": 84,
+    "strategy": "BM25 + character-trigram TF-IDF (local semantic approximation), weights from config; topic-coverage and population gates before answering",
+    "queries": [
+      {
+        "scope": "NATIONAL_STW",
+        "salient_terms": [
+          "hypertension"
+        ],
+        "unmatched_terms": [],
+        "coverage": 1,
+        "top": [
+          {
+            "chunk_id": 18,
+            "doc_code": "STW-GP-02",
+            "version": "2021.1",
+            "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 1",
+            "lexical": 0.885,
+            "semantic": 1,
+            "score": 1.117
+          },
+          {
+            "chunk_id": 16,
+            "doc_code": "STW-GP-02",
+            "version": "2025.2",
+            "anchor": "p1 / REFER / item 1",
+            "lexical": 0.709,
+            "semantic": 0.497,
+            "score": 0.691
+          },
+          {
+            "chunk_id": 12,
+            "doc_code": "STW-GP-02",
+            "version": "2025.2",
+            "anchor": "p1 / FIRST-LINE MANAGEMENT (CURRENT) / item 1",
+            "lexical": 0.246,
+            "semantic": 0.133,
+            "score": 0.686
+          },
+          {
+            "chunk_id": 20,
+            "doc_code": "STW-GP-02",
+            "version": "2021.1",
+            "anchor": "p1 / FIRST-LINE MANAGEMENT (THIS 2021 EDITION) / item 3",
+            "lexical": 0.307,
+            "semantic": 0.344,
+            "score": 0.664
+          },
+          {
+            "chunk_id": 21,
+            "doc_code": "STW-GP-02",
+            "version": "2021.1",
+            "anchor": "p1 / TARGETS / item 1",
+            "lexical": 0.648,
+            "semantic": 0.473,
+            "score": 0.662
+          }
+        ]
+      }
+    ]
+  },
+  "execution": {
+    "duration_ms": 113,
+    "stage_ms": {
+      "normalization": 64,
+      "safety_rail": 9,
+      "index_build": 19,
+      "grounded_qa": 19
+    },
+    "errors": [],
+    "node": "v22.22.2"
+  }
+}

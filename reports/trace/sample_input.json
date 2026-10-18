@@ -1,0 +1,22 @@
+{
+  "prescription": [
+    {
+      "line_no": 1,
+      "written_product": "Dolo 650",
+      "strength_as_written": "650 mg",
+      "dose_frequency": "1-0-1 x 5d"
+    },
+    {
+      "line_no": 2,
+      "written_product": "Sinarest Tablet",
+      "dose_frequency": "1-0-1 x 5d"
+    },
+    {
+      "line_no": 3,
+      "written_product": "Telma",
+      "dose_frequency": "1-0-0"
+    }
+  ],
+  "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension?",
+  "as_of": "2026-10-15"
+}

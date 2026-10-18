@@ -1,0 +1,4369 @@
+{
+  "RX01": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Dolo 650",
+        "strength_as_written": "650 mg",
+        "dose_frequency": "1-0-1 x 5d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1000",
+              "label": "Dolo 650 | Micro Labs | Tablet | Paracetamol 650 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1000",
+        "resolved_brand": "Dolo 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength": "650 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Sinarest Tablet",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-1 x 5d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.85,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [
+            "STRENGTH_NOT_WRITTEN"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1021",
+              "label": "Sinarest Tablet | Centaur | Tablet | Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg",
+              "score": 0.85,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1021",
+        "resolved_brand": "Sinarest Tablet",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength": "500 mg"
+          },
+          {
+            "name": "Chlorpheniramine",
+            "strength": "2 mg"
+          },
+          {
+            "name": "Phenylephrine",
+            "strength": "10 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "HIT",
+        "severity": "MODERATE",
+        "explanation": "paracetamol appears in 2 lines (#1 Dolo 650, #2 Sinarest Tablet); aggregate 2300 mg/day.",
+        "evidence": [
+          {
+            "ingredient": "paracetamol",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Dolo 650",
+                "product_id": "CD1000",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "1-0-1 x 5d",
+                "units_per_day": 2,
+                "daily_mg": 1300,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Sinarest Tablet",
+                "product_id": "CD1021",
+                "dose_form": "Tablet",
+                "strength_per_unit": "500 mg",
+                "frequency_raw": "1-0-1 x 5d",
+                "units_per_day": 2,
+                "daily_mg": 1000,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 2300,
+              "is_lower_bound": false,
+              "complete": true,
+              "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+            },
+            "reference_ceiling": {
+              "value": 3000,
+              "unit": "mg",
+              "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+              "exceeded": false,
+              "context": "Cited population reference from the supplied corpus; not patient-specific.",
+              "sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT"
+                },
+                {
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "page": 1,
+                  "section": "OPD MANAGEMENT"
+                }
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1000",
+            "brand_name": "Dolo 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1021",
+            "brand_name": "Sinarest Tablet"
+          }
+        ],
+        "affected_ingredients": [
+          "paracetamol"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1000",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 1,
+            "detail": "Dolo 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1021",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 22,
+            "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1000",
+            "brand_name": "Dolo 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1021",
+            "brand_name": "Sinarest Tablet"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1000",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 1,
+            "detail": "Dolo 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1021",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 22,
+            "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "paracetamol",
+                "chlorpheniramine",
+                "phenylephrine"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1000",
+            "brand_name": "Dolo 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1021",
+            "brand_name": "Sinarest Tablet"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1000",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 1,
+            "detail": "Dolo 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1021",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 22,
+            "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "paracetamol: 2300 mg/day (complete); ceiling 3000 mg/day not exceeded.",
+        "evidence": [
+          {
+            "ingredient": "paracetamol",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Dolo 650",
+                "product_id": "CD1000",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "1-0-1 x 5d",
+                "units_per_day": 2,
+                "daily_mg": 1300,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Sinarest Tablet",
+                "product_id": "CD1021",
+                "dose_form": "Tablet",
+                "strength_per_unit": "500 mg",
+                "frequency_raw": "1-0-1 x 5d",
+                "units_per_day": 2,
+                "daily_mg": 1000,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 2300,
+              "is_lower_bound": false,
+              "complete": true,
+              "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+            },
+            "reference_ceiling": {
+              "value": 3000,
+              "unit": "mg",
+              "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+              "exceeded": false,
+              "context": "Cited population reference from the supplied corpus; not patient-specific.",
+              "sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT"
+                },
+                {
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "page": 1,
+                  "section": "OPD MANAGEMENT"
+                }
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1000",
+            "brand_name": "Dolo 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1021",
+            "brand_name": "Sinarest Tablet"
+          }
+        ],
+        "affected_ingredients": [
+          "paracetamol"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1000",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 1,
+            "detail": "Dolo 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1021",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 22,
+            "detail": "Sinarest Tablet (Paracetamol 500 mg + Chlorpheniramine 2 mg + Phenylephrine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "HIT": 1,
+        "CHECKED_NO_HIT": 3
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX02": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "NimuPar-P",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-1 x 3d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.85,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [
+            "STRENGTH_NOT_WRITTEN"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1027",
+              "label": "NimuPar-P | Apex Labs | Tablet | Nimesulide 100 mg + Paracetamol 325 mg",
+              "score": 0.85,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1027",
+        "resolved_brand": "NimuPar-P",
+        "ingredients": [
+          {
+            "name": "Nimesulide",
+            "strength": "100 mg"
+          },
+          {
+            "name": "Paracetamol",
+            "strength": "325 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No active ingredient is shared between any of the 1 resolved line(s) after decomposition.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1027",
+            "brand_name": "NimuPar-P"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1027",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 28,
+            "detail": "NimuPar-P (Nimesulide 100 mg + Paracetamol 325 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "HIT",
+        "severity": "CRITICAL",
+        "explanation": "#1 NimuPar-P matches \"Nimesulide + Paracetamol (all strengths)\": derived status PROHIBITED as of 2026-10-15 per GSR 411(E), effective 2023-06-15.",
+        "evidence": [
+          {
+            "line_no": 1,
+            "brand": "NimuPar-P",
+            "product_id": "CD1027",
+            "target": "Nimesulide + Paracetamol (all strengths)",
+            "derived_state": "PROHIBITED",
+            "as_of": "2026-10-15",
+            "applicability": "DEFINITE",
+            "applicability_notes": [],
+            "citing_event": {
+              "event_id": "EV003",
+              "notification_id": "GSR 411(E)",
+              "action": "PROHIBITED",
+              "date_published": "2023-06-02",
+              "effective_date": "2023-06-15",
+              "supersedes_event_id": "EV002",
+              "in_force": true,
+              "superseded_by": null,
+              "note": "Re-prohibition; supersedes stay EV002"
+            },
+            "timeline": [
+              {
+                "event_id": "EV001",
+                "notification_id": "GSR 704(E)",
+                "action": "PROHIBITED",
+                "date_published": "2018-09-07",
+                "effective_date": "2018-09-12",
+                "supersedes_event_id": null,
+                "in_force": true,
+                "superseded_by": "EV002",
+                "note": "Prohibition of FDC under 26A"
+              },
+              {
+                "event_id": "EV002",
+                "notification_id": "HC-STAY-2019-114",
+                "action": "STAY_GRANTED",
+                "date_published": "2019-02-11",
+                "effective_date": "2019-02-11",
+                "supersedes_event_id": "EV001",
+                "in_force": true,
+                "superseded_by": "EV003",
+                "note": "High Court interim stay on EV001"
+              },
+              {
+                "event_id": "EV003",
+                "notification_id": "GSR 411(E)",
+                "action": "PROHIBITED",
+                "date_published": "2023-06-02",
+                "effective_date": "2023-06-15",
+                "supersedes_event_id": "EV002",
+                "in_force": true,
+                "superseded_by": null,
+                "note": "Re-prohibition; supersedes stay EV002"
+              }
+            ],
+            "anomalies": [],
+            "conflicts": []
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1027",
+            "brand_name": "NimuPar-P"
+          }
+        ],
+        "affected_ingredients": [
+          "nimesulide",
+          "paracetamol"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "GSR 411(E) (EV003)",
+            "version": "2023-06-15",
+            "detail": "PROHIBITED, published 2023-06-02, effective 2023-06-15"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1027",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 28,
+            "detail": "NimuPar-P (Nimesulide 100 mg + Paracetamol 325 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only"
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 1 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "nimesulide",
+                "paracetamol"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1027",
+            "brand_name": "NimuPar-P"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1027",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 28,
+            "detail": "NimuPar-P (Nimesulide 100 mg + Paracetamol 325 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1027",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 28,
+            "detail": "NimuPar-P (Nimesulide 100 mg + Paracetamol 325 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "CHECKED_NO_HIT": 3,
+        "HIT": 1
+      },
+      "critical_findings": 1,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX03": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Warf 5",
+        "strength_as_written": "5 mg",
+        "dose_frequency": "0-0-1",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1015",
+              "label": "Warf 5 | Cipla | Tablet | Warfarin 5 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1015",
+        "resolved_brand": "Warf 5",
+        "ingredients": [
+          {
+            "name": "Warfarin",
+            "strength": "5 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Azee 500",
+        "strength_as_written": "500 mg",
+        "dose_frequency": "1-0-0 x 3d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1007",
+              "label": "Azee 500 | Cipla | Tablet | Azithromycin 500 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1007",
+        "resolved_brand": "Azee 500",
+        "ingredients": [
+          {
+            "name": "Azithromycin",
+            "strength": "500 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No active ingredient is shared between any of the 2 resolved line(s) after decomposition.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1015",
+            "brand_name": "Warf 5"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1007",
+            "brand_name": "Azee 500"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1015",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 16,
+            "detail": "Warf 5 (Warfarin 5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1007",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 8,
+            "detail": "Azee 500 (Azithromycin 500 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1015",
+            "brand_name": "Warf 5"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1007",
+            "brand_name": "Azee 500"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1015",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 16,
+            "detail": "Warf 5 (Warfarin 5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1007",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 8,
+            "detail": "Azee 500 (Azithromycin 500 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "HIT",
+        "severity": "CRITICAL",
+        "explanation": "Warfarin + Azithromycin (SEVERE: INR elevation; bleeding) between #1 Warf 5 and #2 Azee 500.",
+        "evidence": [
+          {
+            "pair": [
+              "Warfarin",
+              "Azithromycin"
+            ],
+            "seed_severity": "SEVERE",
+            "note": "INR elevation; bleeding",
+            "source_tag": "public-high-priority-2026",
+            "lines": [
+              {
+                "line_no": 1,
+                "brand": "Warf 5",
+                "ingredient": "Warfarin"
+              },
+              {
+                "line_no": 2,
+                "brand": "Azee 500",
+                "ingredient": "Azithromycin"
+              }
+            ]
+          },
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": []
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1015",
+            "brand_name": "Warf 5"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1007",
+            "brand_name": "Azee 500"
+          }
+        ],
+        "affected_ingredients": [
+          "warfarin",
+          "azithromycin"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "Warfarin + Azithromycin",
+            "version": "public-high-priority-2026",
+            "batch_id": 5,
+            "source_row_id": 2127
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1015",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 16,
+            "detail": "Warf 5 (Warfarin 5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1007",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 8,
+            "detail": "Azee 500 (Azithromycin 500 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1015",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 16,
+            "detail": "Warf 5 (Warfarin 5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1007",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 8,
+            "detail": "Azee 500 (Azithromycin 500 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "CHECKED_NO_HIT": 3,
+        "HIT": 1
+      },
+      "critical_findings": 1,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX04": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Telma",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-0",
+        "resolution": {
+          "status": "NEEDS_REVIEW",
+          "confidence": 0.7,
+          "method": "fuzzy_assist",
+          "reason_codes": [
+            "NO_EXACT_BRAND_MATCH",
+            "FUZZY_CANDIDATES_ONLY"
+          ],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1009",
+              "label": "Telma 20 | Glenmark | Tablet | Telmisartan 20 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1010",
+              "label": "Telma 40 | Glenmark | Tablet | Telmisartan 40 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1011",
+              "label": "Telma 80 | Glenmark | Tablet | Telmisartan 80 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            },
+            {
+              "product_id": "CD1024",
+              "label": "Telma-H 40 | Glenmark | Tablet | Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg",
+              "score": 0.7,
+              "basis": "prefix_match"
+            }
+          ],
+          "queue_id": 1204
+        },
+        "product_id": null,
+        "resolved_brand": null,
+        "ingredients": []
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so duplicates cannot be assessed.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Telma",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "FUZZY_CANDIDATES_ONLY"
+            ],
+            "queue_id": 1204
+          }
+        ],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so the register cannot be consulted.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Telma",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "FUZZY_CANDIDATES_ONLY"
+            ],
+            "queue_id": 1204
+          }
+        ],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so interactions cannot be assessed.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": []
+            }
+          }
+        ],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Telma",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "FUZZY_CANDIDATES_ONLY"
+            ],
+            "queue_id": 1204
+          }
+        ],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total. Coverage is incomplete; this is not an all-clear.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Telma",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "FUZZY_CANDIDATES_ONLY"
+            ],
+            "queue_id": 1204
+          }
+        ],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "UNVERIFIED_INPUT": 4
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX05": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Glycomet 500",
+        "strength_as_written": "500 mg",
+        "dose_frequency": "1-0-1",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1013",
+              "label": "Glycomet 500 | USV | Tablet | Metformin 500 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1013",
+        "resolved_brand": "Glycomet 500",
+        "ingredients": [
+          {
+            "name": "Metformin",
+            "strength": "500 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Atorva 10",
+        "strength_as_written": "10 mg",
+        "dose_frequency": "0-0-1",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1017",
+              "label": "Atorva 10 | Zydus | Tablet | Atorvastatin 10 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1017",
+        "resolved_brand": "Atorva 10",
+        "ingredients": [
+          {
+            "name": "Atorvastatin",
+            "strength": "10 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No active ingredient is shared between any of the 2 resolved line(s) after decomposition.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1013",
+            "brand_name": "Glycomet 500"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1017",
+            "brand_name": "Atorva 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1013",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 14,
+            "detail": "Glycomet 500 (Metformin 500 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1017",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 18,
+            "detail": "Atorva 10 (Atorvastatin 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1013",
+            "brand_name": "Glycomet 500"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1017",
+            "brand_name": "Atorva 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1013",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 14,
+            "detail": "Glycomet 500 (Metformin 500 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1017",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 18,
+            "detail": "Atorva 10 (Atorvastatin 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "metformin",
+                "atorvastatin"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1013",
+            "brand_name": "Glycomet 500"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1017",
+            "brand_name": "Atorva 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1013",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 14,
+            "detail": "Glycomet 500 (Metformin 500 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1017",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 18,
+            "detail": "Atorva 10 (Atorvastatin 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1013",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 14,
+            "detail": "Glycomet 500 (Metformin 500 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1017",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 18,
+            "detail": "Atorva 10 (Atorvastatin 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "CHECKED_NO_HIT": 4
+      },
+      "critical_findings": 0,
+      "all_checks_clean": true,
+      "statement": "All four checks ran with the stated coverage and found nothing. This is a statement about the loaded data only, not clinical clearance; the doctor remains responsible for the prescription."
+    }
+  },
+  "RX06": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Augmentin 625 Duo",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-1 x 5d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.85,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [
+            "STRENGTH_NOT_WRITTEN"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1022",
+              "label": "Augmentin 625 Duo | GSK Pharma | Tablet | Amoxicillin 500 mg + Clavulanic Acid 125 mg",
+              "score": 0.85,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1022",
+        "resolved_brand": "Augmentin 625 Duo",
+        "ingredients": [
+          {
+            "name": "Amoxicillin",
+            "strength": "500 mg"
+          },
+          {
+            "name": "Clavulanic Acid",
+            "strength": "125 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Okacet 10",
+        "strength_as_written": "10 mg",
+        "dose_frequency": "0-0-1 x 5d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1018",
+              "label": "Okacet 10 | Cipla | Tablet | Cetirizine 10 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1018",
+        "resolved_brand": "Okacet 10",
+        "ingredients": [
+          {
+            "name": "Cetirizine",
+            "strength": "10 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No active ingredient is shared between any of the 2 resolved line(s) after decomposition.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1022",
+            "brand_name": "Augmentin 625 Duo"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1018",
+            "brand_name": "Okacet 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1022",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 23,
+            "detail": "Augmentin 625 Duo (Amoxicillin 500 mg + Clavulanic Acid 125 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1018",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 19,
+            "detail": "Okacet 10 (Cetirizine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1022",
+            "brand_name": "Augmentin 625 Duo"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1018",
+            "brand_name": "Okacet 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1022",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 23,
+            "detail": "Augmentin 625 Duo (Amoxicillin 500 mg + Clavulanic Acid 125 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1018",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 19,
+            "detail": "Okacet 10 (Cetirizine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "amoxicillin",
+                "clavulanic acid",
+                "cetirizine"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1022",
+            "brand_name": "Augmentin 625 Duo"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1018",
+            "brand_name": "Okacet 10"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1022",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 23,
+            "detail": "Augmentin 625 Duo (Amoxicillin 500 mg + Clavulanic Acid 125 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1018",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 19,
+            "detail": "Okacet 10 (Cetirizine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1022",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 23,
+            "detail": "Augmentin 625 Duo (Amoxicillin 500 mg + Clavulanic Acid 125 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1018",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 19,
+            "detail": "Okacet 10 (Cetirizine 10 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "CHECKED_NO_HIT": 4
+      },
+      "critical_findings": 0,
+      "all_checks_clean": true,
+      "statement": "All four checks ran with the stated coverage and found nothing. This is a statement about the loaded data only, not clinical clearance; the doctor remains responsible for the prescription."
+    }
+  },
+  "RX07": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Calpol 650",
+        "strength_as_written": "650 mg",
+        "dose_frequency": "1-1-1 x 3d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1001",
+              "label": "Calpol 650 | GSK Pharma | Tablet | Paracetamol 650 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1001",
+        "resolved_brand": "Calpol 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength": "650 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Crocin 650",
+        "strength_as_written": "650 mg",
+        "dose_frequency": "SOS",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1002",
+              "label": "Crocin 650 | GSK Pharma | Tablet | Paracetamol 650 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1002",
+        "resolved_brand": "Crocin 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength": "650 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "HIT",
+        "severity": "MODERATE",
+        "explanation": "paracetamol appears in 2 lines (#1 Calpol 650, #2 Crocin 650); aggregate incomplete (lower bound 1950 mg/day).",
+        "evidence": [
+          {
+            "ingredient": "paracetamol",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Calpol 650",
+                "product_id": "CD1001",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "1-1-1 x 3d",
+                "units_per_day": 3,
+                "daily_mg": 1950,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Crocin 650",
+                "product_id": "CD1002",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "SOS",
+                "units_per_day": null,
+                "daily_mg": null,
+                "computable": false,
+                "reasons": [
+                  "frequency \"SOS\" is as-needed; units per day unknown"
+                ],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 1950,
+              "is_lower_bound": true,
+              "complete": false,
+              "note": "Lower bound: only lines with a computable schedule are summed; excluded lines are listed with reasons."
+            },
+            "reference_ceiling": {
+              "value": 3000,
+              "unit": "mg",
+              "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+              "exceeded": false,
+              "context": "Cited population reference from the supplied corpus; not patient-specific.",
+              "sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT"
+                },
+                {
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "page": 1,
+                  "section": "OPD MANAGEMENT"
+                }
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1001",
+            "brand_name": "Calpol 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1002",
+            "brand_name": "Crocin 650"
+          }
+        ],
+        "affected_ingredients": [
+          "paracetamol"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1001",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 2,
+            "detail": "Calpol 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1002",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 3,
+            "detail": "Crocin 650 (Paracetamol 650 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1001",
+            "brand_name": "Calpol 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1002",
+            "brand_name": "Crocin 650"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1001",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 2,
+            "detail": "Calpol 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1002",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 3,
+            "detail": "Crocin 650 (Paracetamol 650 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "paracetamol"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1001",
+            "brand_name": "Calpol 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1002",
+            "brand_name": "Crocin 650"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1001",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 2,
+            "detail": "Calpol 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1002",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 3,
+            "detail": "Crocin 650 (Paracetamol 650 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "paracetamol: at least 1950 mg/day (incomplete); ceiling 3000 mg/day not exceeded. Coverage is incomplete; this is not an all-clear.",
+        "evidence": [
+          {
+            "ingredient": "paracetamol",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Calpol 650",
+                "product_id": "CD1001",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "1-1-1 x 3d",
+                "units_per_day": 3,
+                "daily_mg": 1950,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Crocin 650",
+                "product_id": "CD1002",
+                "dose_form": "Tablet",
+                "strength_per_unit": "650 mg",
+                "frequency_raw": "SOS",
+                "units_per_day": null,
+                "daily_mg": null,
+                "computable": false,
+                "reasons": [
+                  "frequency \"SOS\" is as-needed; units per day unknown"
+                ],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 1950,
+              "is_lower_bound": true,
+              "complete": false,
+              "note": "Lower bound: only lines with a computable schedule are summed; excluded lines are listed with reasons."
+            },
+            "reference_ceiling": {
+              "value": 3000,
+              "unit": "mg",
+              "basis": "Adult reference maximum quoted as \"max 3 g/day\"",
+              "exceeded": false,
+              "context": "Cited population reference from the supplied corpus; not patient-specific.",
+              "sources": [
+                {
+                  "doc_code": "STW-GP-01",
+                  "version": "2025.1",
+                  "page": 1,
+                  "section": "FIRST-LINE MANAGEMENT"
+                },
+                {
+                  "doc_code": "STW-GP-04",
+                  "version": "2024.2",
+                  "page": 1,
+                  "section": "OPD MANAGEMENT"
+                }
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1001",
+            "brand_name": "Calpol 650"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1002",
+            "brand_name": "Crocin 650"
+          }
+        ],
+        "affected_ingredients": [
+          "paracetamol"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1001",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 2,
+            "detail": "Calpol 650 (Paracetamol 650 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1002",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 3,
+            "detail": "Crocin 650 (Paracetamol 650 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "paracetamol: #2 (frequency \"SOS\" is as-needed; units per day unknown)"
+        ]
+      }
+    ],
+    "summary": {
+      "counts": {
+        "HIT": 1,
+        "CHECKED_NO_HIT": 2,
+        "PARTIAL_COVERAGE": 1
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX08": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Zqtrixon Forte",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-1",
+        "resolution": {
+          "status": "UNRESOLVED",
+          "confidence": 0,
+          "method": "none",
+          "reason_codes": [
+            "NO_EXACT_BRAND_MATCH",
+            "NO_CANDIDATE_FOUND"
+          ],
+          "warnings": [],
+          "candidates": [],
+          "queue_id": 1205
+        },
+        "product_id": null,
+        "resolved_brand": null,
+        "ingredients": []
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so duplicates cannot be assessed.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Zqtrixon Forte",
+            "status": "UNRESOLVED",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "NO_CANDIDATE_FOUND"
+            ],
+            "queue_id": 1205
+          }
+        ],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so the register cannot be consulted.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Zqtrixon Forte",
+            "status": "UNRESOLVED",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "NO_CANDIDATE_FOUND"
+            ],
+            "queue_id": 1205
+          }
+        ],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No line could be resolved to a drug-master product, so interactions cannot be assessed.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": []
+            }
+          }
+        ],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Zqtrixon Forte",
+            "status": "UNRESOLVED",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "NO_CANDIDATE_FOUND"
+            ],
+            "queue_id": 1205
+          }
+        ],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "UNVERIFIED_INPUT",
+        "severity": "INFO",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total. Coverage is incomplete; this is not an all-clear.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 1,
+            "written_product": "Zqtrixon Forte",
+            "status": "UNRESOLVED",
+            "reason_codes": [
+              "NO_EXACT_BRAND_MATCH",
+              "NO_CANDIDATE_FOUND"
+            ],
+            "queue_id": 1205
+          }
+        ],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "UNVERIFIED_INPUT": 4
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX09": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Telma-H 40",
+        "strength_as_written": null,
+        "dose_frequency": "1-0-0",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.85,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [
+            "STRENGTH_NOT_WRITTEN"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1024",
+              "label": "Telma-H 40 | Glenmark | Tablet | Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg",
+              "score": 0.85,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1024",
+        "resolved_brand": "Telma-H 40",
+        "ingredients": [
+          {
+            "name": "Telmisartan",
+            "strength": "40 mg"
+          },
+          {
+            "name": "Hydrochlorothiazide",
+            "strength": "12.5 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Telma 40",
+        "strength_as_written": "40 mg",
+        "dose_frequency": "0-0-1",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1010",
+              "label": "Telma 40 | Glenmark | Tablet | Telmisartan 40 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1010",
+        "resolved_brand": "Telma 40",
+        "ingredients": [
+          {
+            "name": "Telmisartan",
+            "strength": "40 mg"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "HIT",
+        "severity": "MODERATE",
+        "explanation": "telmisartan appears in 2 lines (#1 Telma-H 40, #2 Telma 40); aggregate 80 mg/day.",
+        "evidence": [
+          {
+            "ingredient": "telmisartan",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Telma-H 40",
+                "product_id": "CD1024",
+                "dose_form": "Tablet",
+                "strength_per_unit": "40 mg",
+                "frequency_raw": "1-0-0",
+                "units_per_day": 1,
+                "daily_mg": 40,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Telma 40",
+                "product_id": "CD1010",
+                "dose_form": "Tablet",
+                "strength_per_unit": "40 mg",
+                "frequency_raw": "0-0-1",
+                "units_per_day": 1,
+                "daily_mg": 40,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 80,
+              "is_lower_bound": false,
+              "complete": true,
+              "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+            },
+            "reference_ceiling": null
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1024",
+            "brand_name": "Telma-H 40"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1010",
+            "brand_name": "Telma 40"
+          }
+        ],
+        "affected_ingredients": [
+          "telmisartan"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1024",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 25,
+            "detail": "Telma-H 40 (Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1010",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 11,
+            "detail": "Telma 40 (Telmisartan 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1024",
+            "brand_name": "Telma-H 40"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1010",
+            "brand_name": "Telma 40"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1024",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 25,
+            "detail": "Telma-H 40 (Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1010",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 11,
+            "detail": "Telma 40 (Telmisartan 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "CHECKED_NO_HIT",
+        "severity": "NONE",
+        "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "telmisartan",
+                "hydrochlorothiazide"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1024",
+            "brand_name": "Telma-H 40"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1010",
+            "brand_name": "Telma 40"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1024",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 25,
+            "detail": "Telma-H 40 (Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1010",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 11,
+            "detail": "Telma 40 (Telmisartan 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "telmisartan: 80 mg/day (complete); no reference ceiling available. Coverage is incomplete; this is not an all-clear.",
+        "evidence": [
+          {
+            "ingredient": "telmisartan",
+            "contributing_lines": [
+              {
+                "line_no": 1,
+                "brand": "Telma-H 40",
+                "product_id": "CD1024",
+                "dose_form": "Tablet",
+                "strength_per_unit": "40 mg",
+                "frequency_raw": "1-0-0",
+                "units_per_day": 1,
+                "daily_mg": 40,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              },
+              {
+                "line_no": 2,
+                "brand": "Telma 40",
+                "product_id": "CD1010",
+                "dose_form": "Tablet",
+                "strength_per_unit": "40 mg",
+                "frequency_raw": "0-0-1",
+                "units_per_day": 1,
+                "daily_mg": 40,
+                "computable": true,
+                "reasons": [],
+                "flags": []
+              }
+            ],
+            "aggregate": {
+              "total_daily_mg": 80,
+              "is_lower_bound": false,
+              "complete": true,
+              "note": "Sum over all lines of (units/day x mg per unit), from CDCI strengths and the written dose_frequency."
+            },
+            "reference_ceiling": null
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1024",
+            "brand_name": "Telma-H 40"
+          },
+          {
+            "line_no": 2,
+            "product_id": "CD1010",
+            "brand_name": "Telma 40"
+          }
+        ],
+        "affected_ingredients": [
+          "telmisartan"
+        ],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1024",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 25,
+            "detail": "Telma-H 40 (Telmisartan 40 mg + Hydrochlorothiazide 12.5 mg)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1010",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 11,
+            "detail": "Telma 40 (Telmisartan 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [],
+        "limitations": [
+          "telmisartan: total 80 mg/day computed, but the supplied materials give no reference ceiling to judge it against"
+        ]
+      }
+    ],
+    "summary": {
+      "counts": {
+        "HIT": 1,
+        "CHECKED_NO_HIT": 2,
+        "PARTIAL_COVERAGE": 1
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  },
+  "RX10": {
+    "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+    "rule_version": "rail-1.0.0",
+    "data_version": "dv-6d3ab5cafd7b",
+    "as_of": "2026-10-15",
+    "executed_at": "2026-10-15T00:00:00.000Z",
+    "llm_used_in_safety_path": false,
+    "data_versions": [
+      {
+        "dataset": "cdci",
+        "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+        "source_date": "2026-06-30",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.467Z",
+        "max_age_days": 180,
+        "batch_id": 1,
+        "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+        "row_count": 2000
+      },
+      {
+        "dataset": "interactions",
+        "version_label": "public-high-priority-2026",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.618Z",
+        "max_age_days": 90,
+        "batch_id": 5,
+        "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+        "row_count": 15
+      },
+      {
+        "dataset": "janAushadhi",
+        "version_label": "PMBJP-2026-05",
+        "source_date": "2026-05-01",
+        "freshness_basis": "DECLARED_SOURCE_DATE",
+        "loaded_at": "2026-10-16T07:06:05.573Z",
+        "max_age_days": 180,
+        "batch_id": 3,
+        "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+        "row_count": 50
+      },
+      {
+        "dataset": "nlem",
+        "version_label": "NLEM 2022",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.517Z",
+        "max_age_days": 730,
+        "batch_id": 2,
+        "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+        "row_count": 63
+      },
+      {
+        "dataset": "regulatory",
+        "version_label": "12 events",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.587Z",
+        "max_age_days": 90,
+        "batch_id": 4,
+        "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+        "row_count": 12
+      },
+      {
+        "dataset": "seedRx",
+        "version_label": "10 draft prescriptions",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.853Z",
+        "max_age_days": 3650,
+        "batch_id": 7,
+        "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+        "row_count": 17
+      },
+      {
+        "dataset": "stock",
+        "version_label": "clinic stock file",
+        "source_date": null,
+        "freshness_basis": "LOAD_TIME_ONLY",
+        "loaded_at": "2026-10-16T07:06:05.844Z",
+        "max_age_days": 30,
+        "batch_id": 6,
+        "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+        "row_count": 783
+      }
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "written_product": "Pan 40",
+        "strength_as_written": "40 mg",
+        "dose_frequency": "1-0-0 x 14d",
+        "resolution": {
+          "status": "RESOLVED",
+          "confidence": 0.98,
+          "method": "exact_brand_unique",
+          "reason_codes": [],
+          "warnings": [],
+          "candidates": [
+            {
+              "product_id": "CD1014",
+              "label": "Pan 40 | Alkem | Tablet | Pantoprazole 40 mg",
+              "score": 0.98,
+              "basis": "exact_brand_unique"
+            }
+          ],
+          "queue_id": null
+        },
+        "product_id": "CD1014",
+        "resolved_brand": "Pan 40",
+        "ingredients": [
+          {
+            "name": "Pantoprazole",
+            "strength": "40 mg"
+          }
+        ]
+      },
+      {
+        "line_no": 2,
+        "written_product": "Thyronorm 50",
+        "strength_as_written": "50 mcg",
+        "dose_frequency": "1-0-0",
+        "resolution": {
+          "status": "NEEDS_REVIEW",
+          "confidence": 0.7,
+          "method": "exact_brand",
+          "reason_codes": [
+            "STRENGTH_UNIT_MISMATCH"
+          ],
+          "warnings": [
+            "written 50 mcg vs master Thyroxine 50 mg: same number, different unit"
+          ],
+          "candidates": [
+            {
+              "product_id": "CD1019",
+              "label": "Thyronorm 50 | Abbott India | Tablet | Thyroxine 50 mg",
+              "score": 0.7,
+              "basis": "exact_brand_strength_conflict"
+            }
+          ],
+          "queue_id": 1206
+        },
+        "product_id": null,
+        "resolved_brand": null,
+        "ingredients": []
+      }
+    ],
+    "checks": [
+      {
+        "check_type": "DUPLICATE_INGREDIENT",
+        "rule_id": "RAIL.DUP.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "No shared ingredient among the 1 resolved line(s), but 1 line(s) are unresolved and were not examined.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1014",
+            "brand_name": "Pan 40"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1014",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 15,
+            "detail": "Pan 40 (Pantoprazole 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 2,
+            "written_product": "Thyronorm 50",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "STRENGTH_UNIT_MISMATCH"
+            ],
+            "queue_id": 1206
+          }
+        ],
+        "limitations": []
+      },
+      {
+        "check_type": "PROHIBITED_FDC",
+        "rule_id": "RAIL.REG.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "1 line(s) are unresolved and were not examined.",
+        "evidence": [],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1014",
+            "brand_name": "Pan 40"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "regulatory",
+            "ref": "12 events",
+            "version": "2026-10-16T07:06:05.587Z",
+            "batch_id": 4,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1014",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 15,
+            "detail": "Pan 40 (Pantoprazole 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "regulatory"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 2,
+            "written_product": "Thyronorm 50",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "STRENGTH_UNIT_MISMATCH"
+            ],
+            "queue_id": 1206
+          }
+        ],
+        "limitations": [
+          "regulatory has no declared as-of date; freshness is measured from load time only",
+          "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+        ]
+      },
+      {
+        "check_type": "SEVERE_INTERACTION",
+        "rule_id": "RAIL.INT.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "No seed-list pair among resolved lines, but 1 line(s) are unresolved and were not examined.",
+        "evidence": [
+          {
+            "coverage": {
+              "scope": "SEED_LIST_ONLY",
+              "seed_pairs_total": 15,
+              "seed_pairs_evaluable_against_drug_master": 4,
+              "seed_pairs_not_evaluable": [
+                "Warfarin + Amiodarone",
+                "Methotrexate + Trimethoprim",
+                "Sildenafil + Nitrates",
+                "Clarithromycin + Colchicine",
+                "Lithium + Ibuprofen",
+                "Digoxin + Clarithromycin",
+                "Theophylline + Ciprofloxacin",
+                "Spironolactone + Potassium Chloride",
+                "Enalapril + Potassium Chloride",
+                "Carbamazepine + Erythromycin",
+                "Dabigatran + Ketoconazole"
+              ],
+              "prescribed_ingredients_without_any_seed_coverage": [
+                "pantoprazole"
+              ]
+            }
+          }
+        ],
+        "affected_products": [
+          {
+            "line_no": 1,
+            "product_id": "CD1014",
+            "brand_name": "Pan 40"
+          }
+        ],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "interactions",
+            "ref": "public-high-priority-2026",
+            "version": "2026-10-16T07:06:05.618Z",
+            "batch_id": 5,
+            "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1014",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 15,
+            "detail": "Pan 40 (Pantoprazole 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci",
+          "interactions"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 2,
+            "written_product": "Thyronorm 50",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "STRENGTH_UNIT_MISMATCH"
+            ],
+            "queue_id": 1206
+          }
+        ],
+        "limitations": [
+          "interactions has no declared as-of date; freshness is measured from load time only",
+          "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+          "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+        ]
+      },
+      {
+        "check_type": "CUMULATIVE_EXPOSURE",
+        "rule_id": "RAIL.CUM.1",
+        "status": "PARTIAL_COVERAGE",
+        "severity": "INFO",
+        "explanation": "No ingredient is shared across lines, so there is nothing to total. Coverage is incomplete; this is not an all-clear.",
+        "evidence": [],
+        "affected_products": [],
+        "affected_ingredients": [],
+        "source_references": [
+          {
+            "dataset": "cdci",
+            "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+          },
+          {
+            "dataset": "cdci",
+            "ref": "CD1014",
+            "version": "2026-06-30",
+            "batch_id": 1,
+            "source_row_id": 15,
+            "detail": "Pan 40 (Pantoprazole 40 mg)"
+          }
+        ],
+        "rule_version": "rail-1.0.0",
+        "data_version": "dv-6d3ab5cafd7b",
+        "data_dependencies": [
+          "cdci"
+        ],
+        "executed_at": "2026-10-15T00:00:00.000Z",
+        "unresolved_inputs": [
+          {
+            "line_no": 2,
+            "written_product": "Thyronorm 50",
+            "status": "NEEDS_REVIEW",
+            "reason_codes": [
+              "STRENGTH_UNIT_MISMATCH"
+            ],
+            "queue_id": 1206
+          }
+        ],
+        "limitations": []
+      }
+    ],
+    "summary": {
+      "counts": {
+        "PARTIAL_COVERAGE": 4
+      },
+      "critical_findings": 0,
+      "all_checks_clean": false,
+      "statement": "One or more checks produced a finding or could not run to completion. Absence of a finding in any other check is not clearance. The doctor remains responsible for the prescription."
+    }
+  }
+}

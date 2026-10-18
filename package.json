@@ -1,0 +1,49 @@
+{
+  "name": "brahmo-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "BRAHMO AI - Clinical Intelligence for Indian Outpatient Practice (assessment build)",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "dev": "node scripts/dev.mjs",
+    "bootstrap": "tsx server/src/cli/bootstrap.ts",
+    "ingest": "tsx server/src/cli/ingest.ts",
+    "ingest:dry": "tsx server/src/cli/ingest.ts --dry-run",
+    "eval": "tsx server/src/cli/eval.ts",
+    "seed:rx": "tsx server/src/cli/seed-rx.ts",
+    "trace": "tsx server/src/cli/trace.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "typecheck": "tsc -p server/tsconfig.json --noEmit && tsc -p web/tsconfig.json --noEmit",
+    "lint": "eslint server/src web/src",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mantine/core": "9.7.2",
+    "@mantine/hooks": "9.7.2",
+    "@mantine/notifications": "9.7.2",
+    "@tabler/icons-react": "3.49.0",
+    "csv-parse": "7.0.3",
+    "express": "5.3.0",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.4",
+    "tsx": "4.23.15",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/express": "5.0.6",
+    "@types/node": "22.19.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.1.2",
+    "eslint": "10.12.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.4"
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "report_type": "BRAHMO_SAFETY_RAIL_REPORT",
+  "rule_version": "rail-1.0.0",
+  "data_version": "dv-6d3ab5cafd7b",
+  "as_of": "2026-10-15",
+  "executed_at": "2026-10-15T00:00:00.000Z",
+  "llm_used_in_safety_path": false,
+  "data_versions": [
+    {
+      "dataset": "cdci",
+      "version_label": "CDCI-SUBSET-2026Q2@2026-06-30",
+      "source_date": "2026-06-30",
+      "freshness_basis": "DECLARED_SOURCE_DATE",
+      "loaded_at": "2026-10-16T07:06:05.467Z",
+      "max_age_days": 180,
+      "batch_id": 1,
+      "source_sha256": "8f7cdf39bded99adff6fb58d7305b1c99ffaa3483ed8ab628e8a14d6f95afed7",
+      "row_count": 2000
+    },
+    {
+      "dataset": "interactions",
+      "version_label": "public-high-priority-2026",
+      "source_date": null,
+      "freshness_basis": "LOAD_TIME_ONLY",
+      "loaded_at": "2026-10-16T07:06:05.618Z",
+      "max_age_days": 90,
+      "batch_id": 5,
+      "source_sha256": "a68f50ebe14b902e185d3f94122ff684d0fbf790c8a9a6be73298511ffc836d9",
+      "row_count": 15
+    },
+    {
+      "dataset": "janAushadhi",
+      "version_label": "PMBJP-2026-05",
+      "source_date": "2026-05-01",
+      "freshness_basis": "DECLARED_SOURCE_DATE",
+      "loaded_at": "2026-10-16T07:06:05.573Z",
+      "max_age_days": 180,
+      "batch_id": 3,
+      "source_sha256": "1bb7228d8b6f377bfaab4d46402f93f035d8adc4391087670e00d5943a0e4506",
+      "row_count": 50
+    },
+    {
+      "dataset": "nlem",
+      "version_label": "NLEM 2022",
+      "source_date": null,
+      "freshness_basis": "LOAD_TIME_ONLY",
+      "loaded_at": "2026-10-16T07:06:05.517Z",
+      "max_age_days": 730,
+      "batch_id": 2,
+      "source_sha256": "e212cce8d4a5eb44d8825856fe4e869e89c09e24669a975596311805957328c8",
+      "row_count": 63
+    },
+    {
+      "dataset": "regulatory",
+      "version_label": "12 events",
+      "source_date": null,
+      "freshness_basis": "LOAD_TIME_ONLY",
+      "loaded_at": "2026-10-16T07:06:05.587Z",
+      "max_age_days": 90,
+      "batch_id": 4,
+      "source_sha256": "a57b5a9dd4e93714d184b1bc444f03b738bb6aa2afe0fc27200be8fd73a818f5",
+      "row_count": 12
+    },
+    {
+      "dataset": "seedRx",
+      "version_label": "10 draft prescriptions",
+      "source_date": null,
+      "freshness_basis": "LOAD_TIME_ONLY",
+      "loaded_at": "2026-10-16T07:06:05.853Z",
+      "max_age_days": 3650,
+      "batch_id": 7,
+      "source_sha256": "c72e0d6ff259fbef2442dee8968682fc3f213a96985142f5543359270b06b34e",
+      "row_count": 17
+    },
+    {
+      "dataset": "stock",
+      "version_label": "clinic stock file",
+      "source_date": null,
+      "freshness_basis": "LOAD_TIME_ONLY",
+      "loaded_at": "2026-10-16T07:06:05.844Z",
+      "max_age_days": 30,
+      "batch_id": 6,
+      "source_sha256": "fcb9f6175e5b87d6b2da3d3e8fd9464d5b4285bca7399ea40cd4e1172a50162f",
+      "row_count": 783
+    }
+  ],
+  "lines": [
+    {
+      "line_no": 1,
+      "written_product": "Glycomet 500",
+      "strength_as_written": "500 mg",
+      "dose_frequency": "1-0-1",
+      "resolution": {
+        "status": "RESOLVED",
+        "confidence": 0.98,
+        "method": "exact_brand_unique",
+        "reason_codes": [],
+        "warnings": [],
+        "candidates": [
+          {
+            "product_id": "CD1013",
+            "label": "Glycomet 500 | USV | Tablet | Metformin 500 mg",
+            "score": 0.98,
+            "basis": "exact_brand_unique"
+          }
+        ],
+        "queue_id": null
+      },
+      "product_id": "CD1013",
+      "resolved_brand": "Glycomet 500",
+      "ingredients": [
+        {
+          "name": "Metformin",
+          "strength": "500 mg"
+        }
+      ]
+    },
+    {
+      "line_no": 2,
+      "written_product": "Atorva 10",
+      "strength_as_written": "10 mg",
+      "dose_frequency": "0-0-1",
+      "resolution": {
+        "status": "RESOLVED",
+        "confidence": 0.98,
+        "method": "exact_brand_unique",
+        "reason_codes": [],
+        "warnings": [],
+        "candidates": [
+          {
+            "product_id": "CD1017",
+            "label": "Atorva 10 | Zydus | Tablet | Atorvastatin 10 mg",
+            "score": 0.98,
+            "basis": "exact_brand_unique"
+          }
+        ],
+        "queue_id": null
+      },
+      "product_id": "CD1017",
+      "resolved_brand": "Atorva 10",
+      "ingredients": [
+        {
+          "name": "Atorvastatin",
+          "strength": "10 mg"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check_type": "DUPLICATE_INGREDIENT",
+      "rule_id": "RAIL.DUP.1",
+      "status": "CHECKED_NO_HIT",
+      "severity": "NONE",
+      "explanation": "No active ingredient is shared between any of the 2 resolved line(s) after decomposition.",
+      "evidence": [],
+      "affected_products": [
+        {
+          "line_no": 1,
+          "product_id": "CD1013",
+          "brand_name": "Glycomet 500"
+        },
+        {
+          "line_no": 2,
+          "product_id": "CD1017",
+          "brand_name": "Atorva 10"
+        }
+      ],
+      "affected_ingredients": [],
+      "source_references": [
+        {
+          "dataset": "cdci",
+          "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1013",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 14,
+          "detail": "Glycomet 500 (Metformin 500 mg)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1017",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 18,
+          "detail": "Atorva 10 (Atorvastatin 10 mg)"
+        }
+      ],
+      "rule_version": "rail-1.0.0",
+      "data_version": "dv-6d3ab5cafd7b",
+      "data_dependencies": [
+        "cdci"
+      ],
+      "executed_at": "2026-10-15T00:00:00.000Z",
+      "unresolved_inputs": [],
+      "limitations": []
+    },
+    {
+      "check_type": "PROHIBITED_FDC",
+      "rule_id": "RAIL.REG.1",
+      "status": "CHECKED_NO_HIT",
+      "severity": "NONE",
+      "explanation": "No resolved product matches any of the 9 register targets in force at 2026-10-15.",
+      "evidence": [],
+      "affected_products": [
+        {
+          "line_no": 1,
+          "product_id": "CD1013",
+          "brand_name": "Glycomet 500"
+        },
+        {
+          "line_no": 2,
+          "product_id": "CD1017",
+          "brand_name": "Atorva 10"
+        }
+      ],
+      "affected_ingredients": [],
+      "source_references": [
+        {
+          "dataset": "cdci",
+          "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+        },
+        {
+          "dataset": "regulatory",
+          "ref": "12 events",
+          "version": "2026-10-16T07:06:05.587Z",
+          "batch_id": 4,
+          "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1013",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 14,
+          "detail": "Glycomet 500 (Metformin 500 mg)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1017",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 18,
+          "detail": "Atorva 10 (Atorvastatin 10 mg)"
+        }
+      ],
+      "rule_version": "rail-1.0.0",
+      "data_version": "dv-6d3ab5cafd7b",
+      "data_dependencies": [
+        "cdci",
+        "regulatory"
+      ],
+      "executed_at": "2026-10-15T00:00:00.000Z",
+      "unresolved_inputs": [],
+      "limitations": [
+        "regulatory has no declared as-of date; freshness is measured from load time only",
+        "Register coverage: 12 loaded events across 9 targets; this is not the complete national list."
+      ]
+    },
+    {
+      "check_type": "SEVERE_INTERACTION",
+      "rule_id": "RAIL.INT.1",
+      "status": "CHECKED_NO_HIT",
+      "severity": "NONE",
+      "explanation": "No pair among the 2 resolved line(s) appears in the 15-pair severe-interaction seed list. This is a seed-list result, not an exhaustive screen.",
+      "evidence": [
+        {
+          "coverage": {
+            "scope": "SEED_LIST_ONLY",
+            "seed_pairs_total": 15,
+            "seed_pairs_evaluable_against_drug_master": 4,
+            "seed_pairs_not_evaluable": [
+              "Warfarin + Amiodarone",
+              "Methotrexate + Trimethoprim",
+              "Sildenafil + Nitrates",
+              "Clarithromycin + Colchicine",
+              "Lithium + Ibuprofen",
+              "Digoxin + Clarithromycin",
+              "Theophylline + Ciprofloxacin",
+              "Spironolactone + Potassium Chloride",
+              "Enalapril + Potassium Chloride",
+              "Carbamazepine + Erythromycin",
+              "Dabigatran + Ketoconazole"
+            ],
+            "prescribed_ingredients_without_any_seed_coverage": [
+              "metformin",
+              "atorvastatin"
+            ]
+          }
+        }
+      ],
+      "affected_products": [
+        {
+          "line_no": 1,
+          "product_id": "CD1013",
+          "brand_name": "Glycomet 500"
+        },
+        {
+          "line_no": 2,
+          "product_id": "CD1017",
+          "brand_name": "Atorva 10"
+        }
+      ],
+      "affected_ingredients": [],
+      "source_references": [
+        {
+          "dataset": "cdci",
+          "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+        },
+        {
+          "dataset": "interactions",
+          "ref": "public-high-priority-2026",
+          "version": "2026-10-16T07:06:05.618Z",
+          "batch_id": 5,
+          "detail": "freshness -1d vs limit 90d (LOAD_TIME_ONLY)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1013",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 14,
+          "detail": "Glycomet 500 (Metformin 500 mg)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1017",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 18,
+          "detail": "Atorva 10 (Atorvastatin 10 mg)"
+        }
+      ],
+      "rule_version": "rail-1.0.0",
+      "data_version": "dv-6d3ab5cafd7b",
+      "data_dependencies": [
+        "cdci",
+        "interactions"
+      ],
+      "executed_at": "2026-10-15T00:00:00.000Z",
+      "unresolved_inputs": [],
+      "limitations": [
+        "interactions has no declared as-of date; freshness is measured from load time only",
+        "Coverage is the 15-pair seed list only (4 pairs reference ingredients present in the drug master); it is not an exhaustive interaction screen.",
+        "Draft-only input: no patient medication list, allergies or conditions were supplied, so interactions with medicines outside this draft were not evaluated."
+      ]
+    },
+    {
+      "check_type": "CUMULATIVE_EXPOSURE",
+      "rule_id": "RAIL.CUM.1",
+      "status": "CHECKED_NO_HIT",
+      "severity": "NONE",
+      "explanation": "No ingredient is shared across lines, so there is nothing to total.",
+      "evidence": [],
+      "affected_products": [],
+      "affected_ingredients": [],
+      "source_references": [
+        {
+          "dataset": "cdci",
+          "ref": "CDCI-SUBSET-2026Q2@2026-06-30",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "detail": "freshness 107d vs limit 180d (DECLARED_SOURCE_DATE)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1013",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 14,
+          "detail": "Glycomet 500 (Metformin 500 mg)"
+        },
+        {
+          "dataset": "cdci",
+          "ref": "CD1017",
+          "version": "2026-06-30",
+          "batch_id": 1,
+          "source_row_id": 18,
+          "detail": "Atorva 10 (Atorvastatin 10 mg)"
+        }
+      ],
+      "rule_version": "rail-1.0.0",
+      "data_version": "dv-6d3ab5cafd7b",
+      "data_dependencies": [
+        "cdci"
+      ],
+      "executed_at": "2026-10-15T00:00:00.000Z",
+      "unresolved_inputs": [],
+      "limitations": []
+    }
+  ],
+  "summary": {
+    "counts": {
+      "CHECKED_NO_HIT": 4
+    },
+    "critical_findings": 0,
+    "all_checks_clean": true,
+    "statement": "All four checks ran with the stated coverage and found nothing. This is a statement about the loaded data only, not clinical clearance; the doctor remains responsible for the prescription."
+  }
+}
